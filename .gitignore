@@ -1,0 +1,7 @@
+.env
+mobile-phone-activity
+
+.DS_store
+.pyc
+.ipynb_checkpoints/
+
