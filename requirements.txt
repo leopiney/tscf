@@ -1,10 +1,12 @@
 numpy
 pandas
 matplotlib
+pygal
 seaborn
 scipy
 
 jupyter
+jupyterlab
 
 ipython
 ipdb
