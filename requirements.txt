@@ -10,3 +10,4 @@ jupyterlab
 
 ipython
 ipdb
+flake8
