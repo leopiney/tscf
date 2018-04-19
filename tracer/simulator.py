@@ -5,6 +5,11 @@ import pandas as pd
 
 from itertools import cycle
 
+from IPython.core.debugger import Tracer
+
+EXPANDER = 1
+SIGMA = 0.03
+
 
 def distance(p1, p2):
     """Distance between two points"""
@@ -57,8 +62,8 @@ class TraceSimulator(object):
 
         for i in range(self.number_towers):
             for j in range(self.number_towers):
-                # dists[i][j] = -1 * dists[i][j] * (xamtfos(dists[i][j], SIGMA)) * EXPANDER
-                dists[i][j] = -1 * dists[i][j] ** 2
+                dists[i][j] = -1 * dists[i][j] * (xamtfos(dists[i][j], SIGMA)) * EXPANDER
+                # dists[i][j] = -1 * dists[i][j] ** 2
 
         normalizer = dists.max().max() / 2
         dists -= normalizer
@@ -74,30 +79,35 @@ class TraceSimulator(object):
 
     def get_new_point(self, direction):
         # direction is a list with two elemenst, the vector
-        # while True:
         vel_x = direction[1][0] - direction[0][0]
         vel_y = direction[1][1] - direction[0][1]
         x = direction[1][0] + vel_x
         y = direction[1][1] + vel_y
 
-        if x > 1:
-            vel_x = - vel_x
-            x = 2 * 1 - x
-        if x < 0:
-            vel_x = - vel_x
-            x = 2 * 1 + x
-        if y > 1:
-            vel_y = - vel_y
-            y = 2 * 1 - y
-        if y < 0:
-            vel_y = - vel_y
-            y = 2 * 1 + y
+        while not self.is_in_box([x, y]):
+            # Tracer()()
+
+            if x > 1:
+                vel_x = - vel_x
+                x = 2 * 1 - x
+            if x < 0:
+                vel_x = - vel_x
+                x = 2 * 1 + x
+            if y > 1:
+                vel_y = - vel_y
+                y = 2 * 1 - y
+            if y < 0:
+                vel_y = - vel_y
+                y = 2 * 1 + y
+
+            vel_x *= 0.9
+            vel_y *= 0.9
 
         return [x, y]
 
     def get_nearest_tower(self, point):
-        distances = np.array([distance(point, x) for x in self.towers])
-        return distances.argwhere(distances, distances.min())
+        distances = [distance(point, x) for x in self.towers]
+        return np.argmin(distances)
 
     def generate_weighted_users_traces(self):
         def generate_weighted_user_trace():
@@ -110,18 +120,18 @@ class TraceSimulator(object):
                     # For the first towers the chance of selecting a tower is equally distributed
                     tower = np.random.choice(towers_ids)
                     trace.append(tower)
-                    direction.push(tower)
+                    direction.append(self.towers[tower])
                 elif c == 1:
                     last_tower = trace[c - 1]
                     tower = np.random.choice(towers_ids, p=self.probabilities[last_tower])
                     trace.append(tower)
-                    direction.push(tower)
+                    direction.append(self.towers[tower])
                 else:
                     new_point = self.get_new_point(direction)
                     nearest_tower = self.get_nearest_tower(new_point)
                     tower = np.random.choice(towers_ids, p=self.probabilities[nearest_tower])
                     trace.append(tower)
-                    direction = [direction[1], tower]
+                    direction = [direction[1], self.towers[tower]]
 
             return trace
 
@@ -157,7 +167,7 @@ class TraceSimulator(object):
 
         plt.gca().set_aspect('equal', adjustable='box')
 
-    def plot_user_trace(self, user_id=0, figsize=(12, 12)):
+    def plot_user_trace(self, user_id=0, figsize=(12, 12), verbose=False):
         df_towers = pd.DataFrame(self.towers, columns=['x', 'y'])
         ax = df_towers.plot.scatter(
             x='x',
@@ -177,12 +187,17 @@ class TraceSimulator(object):
 
         for i in range(self.number_cycles - 1):
             if trace[i] == trace[i + 1]:
-                print(f'Cycle #{i}: Staying in tower T{trace[i]}')
+                if verbose:
+                    print(f'Cycle #{i}: Staying in tower T{trace[i]}')
                 continue
             x1, y1 = self.towers[trace[i]]
             x2, y2 = self.towers[trace[i + 1]]
 
-            print(f'Cycle #{i}: Switching from T{trace[i]} to T{trace[i + 1]}')
+            if verbose:
+                print(
+                    f'Cycle #{i}: Switching from T{trace[i]} '
+                    f'to T{trace[i + 1]}'
+                )
             color = next(cycol)
             ax.arrow(
                 x1,
