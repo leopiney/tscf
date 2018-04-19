@@ -68,18 +68,60 @@ class TraceSimulator(object):
             for i in range(self.number_towers)
         ])
 
+    def is_in_box(self, point):
+        return (
+            point[0] > 0 and point[0] < 1 and point[1] > 0 and point[1] < 1)
+
+    def get_new_point(self, direction):
+        # direction is a list with two elemenst, the vector
+        # while True:
+        vel_x = direction[1][0] - direction[0][0]
+        vel_y = direction[1][1] - direction[0][1]
+        x = direction[1][0] + vel_x
+        y = direction[1][1] + vel_y
+
+        if x > 1:
+            vel_x = - vel_x
+            x = 2 * 1 - x
+        if x < 0:
+            vel_x = - vel_x
+            x = 2 * 1 + x
+        if y > 1:
+            vel_y = - vel_y
+            y = 2 * 1 - y
+        if y < 0:
+            vel_y = - vel_y
+            y = 2 * 1 + y
+
+        return [x, y]
+
+    def get_nearest_tower(self, point):
+        distances = np.array([distance(point, x) for x in self.towers])
+        return distances.argwhere(distances, distances.min())
+
     def generate_weighted_users_traces(self):
         def generate_weighted_user_trace():
             towers_ids = np.arange(self.number_towers)
 
             trace = []
+            direction = []
             for c in range(self.number_cycles):
                 if c == 0:
                     # For the first towers the chance of selecting a tower is equally distributed
-                    trace.append(np.random.choice(towers_ids))
-                else:
+                    tower = np.random.choice(towers_ids)
+                    trace.append(tower)
+                    direction.push(tower)
+                elif c == 1:
                     last_tower = trace[c - 1]
-                    trace.append(np.random.choice(towers_ids, p=self.probabilities[last_tower]))
+                    tower = np.random.choice(towers_ids, p=self.probabilities[last_tower])
+                    trace.append(tower)
+                    direction.push(tower)
+                else:
+                    new_point = self.get_new_point(direction)
+                    nearest_tower = self.get_nearest_tower(new_point)
+                    tower = np.random.choice(towers_ids, p=self.probabilities[nearest_tower])
+                    trace.append(tower)
+                    direction = [direction[1], tower]
 
             return trace
 
