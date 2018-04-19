@@ -5,6 +5,8 @@ pygal
 seaborn
 scipy
 
+gmaps
+
 jupyter
 jupyterlab
 
