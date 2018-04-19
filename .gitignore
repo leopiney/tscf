@@ -3,7 +3,7 @@ mobile-phone-activity
 
 .DS_store
 *.pyc
-*/.ipynb_checkpoints/
-*/__pycache__
+.ipynb_checkpoints/
+__pycache__/
 *.swp
 
