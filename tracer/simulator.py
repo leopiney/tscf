@@ -1,14 +1,10 @@
+import itertools
 import math
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from itertools import cycle
-
-from IPython.core.debugger import Tracer
-
-EXPANDER = 1
-SIGMA = 0.03
+from time import time
 
 
 def distance(p1, p2):
@@ -34,12 +30,35 @@ class TraceSimulator(object):
         number_towers=100,
         number_users=100,
         number_cycles=24,
+        method='distance_distribution',
+        expander=1,
+        sigma=0.03,
+        distance_power=5,
+        vel_friction=0.9,
+        verbose=False,
     ):
         self.number_towers = number_towers
         self.number_users = number_users
         self.number_cycles = number_cycles
 
+        self.method = method
+
+        # for distance_distribution method
+        self.expander = expander
+        self.sigma = sigma
+
+        # for distance_square method
+        self.distance_power = distance_power
+
+        self.vel_friction = vel_friction
+        self.verbose = verbose
+
+    def print(self, *args):
+        if self.verbose:
+            print(*args)
+
     def generate(self):
+        t0 = time()
         self.towers = np.random.rand(self.number_towers, 2)
 
         self.distances = np.array([
@@ -49,12 +68,21 @@ class TraceSimulator(object):
             ]
             for i in range(self.number_towers)
         ])
+        self.print(f'Took {time() - t0} to create distrances matrix')
 
+        t = time()
         self.probabilities = self.generate_probabilities()
+        self.print(f'Took {time() - t} to create probabilities matrix')
 
+        t = time()
         self.traces = self.generate_weighted_users_traces()
+        self.print(f'Took {time() - t} to create user traces')
 
+        t = time()
         self.aggregated_data = self.generate_aggregate_data()
+        self.print(f'Took {time() - t} to build aggregated data')
+
+        self.print(f'Took {time() - t0} to generate all')
 
     def generate_probabilities(self):
         """Generate a matrix of probilities to go from """
@@ -62,8 +90,15 @@ class TraceSimulator(object):
 
         for i in range(self.number_towers):
             for j in range(self.number_towers):
-                dists[i][j] = -1 * dists[i][j] * (xamtfos(dists[i][j], SIGMA)) * EXPANDER
-                # dists[i][j] = -1 * dists[i][j] ** 2
+                if self.method == 'distance_distribution':
+                    dists[i][j] = (
+                        -1 *
+                        (dists[i][j] ** 2) *
+                        xamtfos(dists[i][j] ** 2, self.sigma) *
+                        self.expander
+                    )
+                elif self.method == 'distance_square':
+                    dists[i][j] = -1 * (dists[i][j] + 1) ** self.distance_power
 
         normalizer = dists.max().max() / 2
         dists -= normalizer
@@ -100,8 +135,8 @@ class TraceSimulator(object):
                 vel_y = - vel_y
                 y = 2 * 1 + y
 
-            vel_x *= 0.9
-            vel_y *= 0.9
+            vel_x *= self.vel_friction
+            vel_y *= self.vel_friction
 
         return [x, y]
 
@@ -146,12 +181,12 @@ class TraceSimulator(object):
 
         for tower in range(self.number_towers):
             for user in range(self.number_users):
-                for time in range(self.number_cycles):
-                    output[tower][time] += self.traces[user][time] == tower
+                for cycle in range(self.number_cycles):
+                    output[tower][cycle] += self.traces[user][cycle] == tower
 
         return output
 
-    def plot_towers(self, figsize=(8, 8)):
+    def plot_towers(self, figsize=(8, 8), annotate_towers=True):
         df_towers = pd.DataFrame(self.towers, columns=['x', 'y'])
         ax = df_towers.plot.scatter(
             x='x',
@@ -162,42 +197,31 @@ class TraceSimulator(object):
             marker='x'
         )
 
-        for i in range(len(df_towers)):
-            ax.annotate(f'    T{i}', (df_towers.iloc[i].x, df_towers.iloc[i].y))
+        if annotate_towers:
+            for i in range(len(df_towers)):
+                ax.annotate(f'    T{i}', (df_towers.iloc[i].x, df_towers.iloc[i].y))
 
         plt.gca().set_aspect('equal', adjustable='box')
+        return ax
 
-    def plot_user_trace(self, user_id=0, figsize=(12, 12), verbose=False):
-        df_towers = pd.DataFrame(self.towers, columns=['x', 'y'])
-        ax = df_towers.plot.scatter(
-            x='x',
-            y='y',
-            ylim=(0, 1),
-            xlim=(0, 1),
-            figsize=figsize,
-            marker='x'
-        )
+    def plot_user_trace(self, user_id=0, figsize=(12, 12), annotate_towers=True, verbose=False):
+        ax = self.plot_towers(figsize=figsize, annotate_towers=annotate_towers)
 
-        for i in range(len(df_towers)):
-            ax.annotate(f'    T{i}', (df_towers.iloc[i].x, df_towers.iloc[i].y))
-
-        cycol = cycle('bgrcmk')
+        cycol = itertools.cycle('bgrcmk')
 
         trace = self.traces[user_id]
 
         for i in range(self.number_cycles - 1):
             if trace[i] == trace[i + 1]:
-                if verbose:
-                    print(f'Cycle #{i}: Staying in tower T{trace[i]}')
+                self.print(f'Cycle #{i}: Staying in tower T{trace[i]}')
                 continue
             x1, y1 = self.towers[trace[i]]
             x2, y2 = self.towers[trace[i + 1]]
 
-            if verbose:
-                print(
-                    f'Cycle #{i}: Switching from T{trace[i]} '
-                    f'to T{trace[i + 1]}'
-                )
+            self.print(
+                f'Cycle #{i}: Switching from T{trace[i]} '
+                f'to T{trace[i + 1]}'
+            )
             color = next(cycol)
             ax.arrow(
                 x1,
