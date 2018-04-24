@@ -45,7 +45,7 @@ class TrajectoryRecovery(object):
 
     def trajectory_recovery_generator(self):
         self.S = []
-        self.C = []
+        self.C = [None]
 
         for cycle in range(self.number_cycles):
             if cycle == 0:
