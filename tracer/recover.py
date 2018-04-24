@@ -52,8 +52,15 @@ class TrajectoryRecovery(object):
                 self.S.append(np.random.permutation(self.L[0]))
             else:
                 if cycle % 24 < 7:
+                    #
+                    # If it's on the night, we estimate the next location as the last one.
+                    #
                     L_next_est = self.S[cycle - 1]
                 else:
+                    #
+                    # During daylight, we estimate the next location taking into account
+                    # the current users trajectory and direction.
+                    #
                     L_next_est = []
                     for user in range(self.number_users):
                         direction = [
