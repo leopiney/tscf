@@ -51,7 +51,7 @@ class TrajectoryRecovery(object):
             if cycle == 0:
                 self.S.append(np.random.permutation(self.L[0]))
             else:
-                if cycle % 24 < 7:
+                if cycle == 1:
                     #
                     # If it's on the night, we estimate the next location as the last one.
                     #
@@ -114,3 +114,23 @@ class TrajectoryRecovery(object):
             'recovered_costs': self.C,
             'recovered_trajectories': self.S,
         }
+
+    def get_traces_common_elements(self, trace_1, trace_2):
+        return np.sum(trace_1 == trace_2)
+
+    def map_traces(self, real_traces):
+        result = []
+        used_traces = np.array([False for _ in real_traces])
+        acc = 0
+        for trace in self.S.T:
+            common_elements = np.array([
+                self.get_traces_common_elements(trace, x) for x in real_traces
+            ])
+            common_elements[used_traces] = -1
+            min_distance_index = np.argmax(common_elements)
+            acc += (common_elements[min_distance_index] / len(trace))
+            used_traces[min_distance_index] = True
+            result.append(min_distance_index)
+
+        global_accuracy = acc / self.number_users
+        return result, global_accuracy
