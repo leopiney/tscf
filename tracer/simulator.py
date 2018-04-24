@@ -2,6 +2,11 @@
 from time import time
 import numpy as np
 
+from tracer.pymobility.models.mobility import random_waypoint
+from tracer.pymobility.models.mobility import random_direction
+from tracer.pymobility.models.mobility import random_walk
+from tracer.pymobility.models.mobility import stochastic_walk
+
 from tracer.towers import TowersManager
 from tracer.utils import softmax
 from tracer.utils import xamtfos
@@ -141,3 +146,62 @@ class TraceSimulator(object):
                     output[cycle][tower] += self.traces[user][cycle] == tower
 
         return output
+
+
+class MobilitySimulator(object):
+    """A simulator of mobility models for user traces"""
+    def __init__(
+        self,
+        towers,
+        number_users=100,
+        number_cycles=24,
+        velocity=(0.1, 0.3),
+        wt=1,
+        type="random_waypoint",
+        repeat=10,
+    ):
+        self.number_users = number_users
+        self.number_cycles = number_cycles
+        self.velocity = velocity
+        self.wt = wt
+        self.towers = towers
+        self.number_towers = len(towers)
+        self.tw = TowersManager(self.towers)
+        self.repeat = repeat
+        self.model = random_waypoint(
+            self.number_users, dimensions=(1, 1), velocity=self.velocity,
+            wt_max=self.wt
+        )
+
+    def generate_traces(self):
+        traces = []
+        for i in range(self.number_cycles):
+            traces.append(np.copy(next(self.model)))
+
+        traces = np.array(traces)
+        return traces.swapaxes(0, 1)
+
+    def generate_tower_traces(self):
+        results = []
+        for trace in self.traces:
+            results.append([self.tw.get_nearest_tower(x) for x in trace])
+        return np.tile(np.array(results), self.repeat)
+
+    def generate_aggregate_data(self):
+        """Returns how many users were in each step of the cycle based on traces
+
+        Returns a matrix of shape (number_cycles, number_towers)"""
+        cycles = self.number_cycles * self.repeat
+        output = np.zeros((cycles, self.number_towers))
+
+        for cycle in range(cycles):
+            for user in range(self.number_users):
+                for tower in range(self.number_towers):
+                    output[cycle][tower] += self.tower_traces[user][cycle] == tower
+
+        return output
+
+    def generate(self):
+        self.traces = self.generate_traces()
+        self.tower_traces = self.generate_tower_traces()
+        self.aggregated_data = self.generate_aggregate_data()
