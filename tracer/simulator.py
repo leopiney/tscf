@@ -25,6 +25,7 @@ class TraceSimulator(object):
             sigma=0.03,
             distance_power=5,
             vel_friction=0.9,
+            random_towers=False,
             verbose=False,
     ):
         self.number_towers = number_towers
@@ -40,6 +41,7 @@ class TraceSimulator(object):
         # for distance_square method
         self.distance_power = distance_power
 
+        self.random_towers = random_towers
         self.vel_friction = vel_friction
         self.verbose = verbose
 
@@ -51,7 +53,19 @@ class TraceSimulator(object):
     def generate(self):
         """Runs all the simulation"""
         t_0 = time()
-        self.towers = np.random.rand(self.number_towers, 2)
+
+        if self.random_towers:
+            self.towers = np.random.rand(self.number_towers, 2)
+        else:
+            step = np.ceil(np.sqrt(self.number_towers)).astype('int')
+
+            if step ** 2 != self.number_towers:
+                self.number_towers = step ** 2
+                print(f'WARNING: number of towers changed to {self.number_towers}')
+
+            X, Y = np.mgrid[0:1:step * 1j, 0:1:step * 1j]
+            positions = np.vstack([X.ravel(), Y.ravel()])
+            self.towers = positions.swapaxes(1, 0)
 
         self.towers_manager = TowersManager(self.towers, self.vel_friction)
 

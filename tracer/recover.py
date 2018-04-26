@@ -121,16 +121,18 @@ class TrajectoryRecovery(object):
     def map_traces(self, real_traces):
         result = []
         used_traces = np.array([False for _ in real_traces])
-        acc = 0
+        acc = []
+
         for trace in self.S.T:
             common_elements = np.array([
                 self.get_traces_common_elements(trace, x) for x in real_traces
             ])
             common_elements[used_traces] = -1
             min_distance_index = np.argmax(common_elements)
-            acc += (common_elements[min_distance_index] / len(trace))
+            acc.append(common_elements[min_distance_index])
             used_traces[min_distance_index] = True
             result.append(min_distance_index)
 
-        global_accuracy = acc / self.number_users
-        return result, global_accuracy
+        acc = np.array(acc)
+        global_accuracy = np.sum(acc / self.number_cycles) / self.number_users
+        return result, global_accuracy, acc

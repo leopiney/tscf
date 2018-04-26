@@ -20,8 +20,8 @@ def softmax(x):
 
 def is_in_box(point):
     return (
-        point[0] > 0 and
-        point[0] < 1 and
-        point[1] > 0 and
-        point[1] < 1
+        point[0] >= 0 and
+        point[0] <= 1 and
+        point[1] >= 0 and
+        point[1] <= 1
     )
