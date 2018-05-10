@@ -4,6 +4,7 @@ import numpy as np
 
 from joblib import Parallel, delayed
 from scipy.optimize import linear_sum_assignment
+from tqdm import tqdm, tqdm_notebook
 
 from tracer.towers import TowersManager
 
@@ -44,11 +45,13 @@ class TrajectoryRecovery(object):
 
         self.L = np.array(L)
 
-    def trajectory_recovery_generator(self):
+    def trajectory_recovery_generator(self, show_progress=False):
         self.S = []
         self.C = [None]
 
-        for cycle in range(self.number_cycles):
+        progress_indicator = tqdm_notebook if show_progress else tqdm
+
+        for cycle in progress_indicator(range(self.number_cycles), 'Recovering'):
             if cycle == 0:
                 self.S.append(np.random.permutation(self.L[0]))
             else:
@@ -125,7 +128,7 @@ class TrajectoryRecovery(object):
             for z_t, y_t in zip(trace_1, trace_2)
         ])
 
-    def map_traces(self, real_traces, mapping_style):
+    def map_traces(self, real_traces, mapping_style, show_progress=False):
         """Maps the recovered traces with real ones
 
         @param real_traces The traces to map with the recovered traces
@@ -152,7 +155,9 @@ class TrajectoryRecovery(object):
         random_index = np.arange(len(self.S.T))
         np.random.shuffle(random_index)
 
-        for recovered_trace_index in random_index:
+        progress_indicator = tqdm_notebook if show_progress else tqdm
+
+        for recovered_trace_index in progress_indicator(random_index, 'Mapping'):
             recovered_trace = self.S.T[recovered_trace_index]
 
             #
@@ -205,6 +210,13 @@ class TrajectoryRecovery(object):
         return result, global_accuracy, mapping_accuracy, mapping_error
 
     def map_traces_analysis(self, real_traces, mapping_style, k=10, n_jobs=-1):
+        """Returns the mapping results starting at a random generated trace
+
+        To avoid falling into local minimum values its appropiate to run
+        the algorithm several times starting in different points to see that
+        the results converge into a similar value.
+
+        @returns an array of tuples (result, global_accuracy, mapping_accuracy, mapping_error)"""
         return Parallel(n_jobs=n_jobs)(
             delayed(self.map_traces)(real_traces, mapping_style)
             for _ in range(k)

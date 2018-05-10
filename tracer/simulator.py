@@ -153,14 +153,10 @@ class TraceSimulator(object):
         """Returns how many users were in each step of the cycle based on traces
 
         Returns a matrix of shape (number_cycles, number_towers)"""
-        output = np.zeros((self.number_cycles, self.number_towers))
-
-        for cycle in range(self.number_cycles):
-            for user in range(self.number_users):
-                for tower in range(self.number_towers):
-                    output[cycle][tower] += self.traces[user][cycle] == tower
-
-        return output
+        return np.array([
+            np.sum(self.traces == tower, axis=0)
+            for tower in range(self.number_towers)
+        ]).T
 
 
 class MobilitySimulator(object):
