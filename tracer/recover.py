@@ -2,6 +2,7 @@
 import itertools
 import numpy as np
 
+from joblib import Parallel, delayed
 from scipy.optimize import linear_sum_assignment
 
 from tracer.towers import TowersManager
@@ -26,7 +27,7 @@ class TrajectoryRecovery(object):
         self.number_towers = aggregated_data.shape[1]
 
         self.towers_manager = TowersManager(towers, vel_friction=vel_friction)
-        self.distances = self.towers_manager.generate_distances()
+        self.distances = self.towers_manager.distances
 
     def build_distribution_matrix(self):
         L = []
@@ -118,21 +119,93 @@ class TrajectoryRecovery(object):
     def get_traces_common_elements(self, trace_1, trace_2):
         return np.sum(trace_1 == trace_2)
 
-    def map_traces(self, real_traces):
-        result = []
+    def get_traces_distance_error(self, trace_1, trace_2):
+        return np.sum([
+            self.distances[z_t, y_t]
+            for z_t, y_t in zip(trace_1, trace_2)
+        ])
+
+    def map_traces(self, real_traces, mapping_style):
+        """Maps the recovered traces with real ones
+
+        @param real_traces The traces to map with the recovered traces
+        @param mapping_style Could be either 'accuracy' or 'error'
+        """
+        #
+        # Build an boolean array where each value represents if that real_trace
+        # has already been used
+        #
         used_traces = np.array([False for _ in real_traces])
-        acc = []
 
-        for trace in self.S.T:
+        #
+        # Store the accuracy, error and best match for each mapping between the recovered
+        # traces (self.S)
+        # and the real_traces
+        #
+        mapping_accuracy = np.zeros(len(self.S.T)).astype('int')
+        mapping_error = np.zeros(len(self.S.T))
+        result = np.zeros(len(self.S.T)).astype('int')
+
+        #
+        # Generate a random index to iterate through the recoevered traces in a random order
+        #
+        random_index = np.arange(len(self.S.T))
+        np.random.shuffle(random_index)
+
+        for recovered_trace_index in random_index:
+            recovered_trace = self.S.T[recovered_trace_index]
+
+            #
+            # Compare the recovered_trace with the real_traces
+            # Compute the accuracy as the number of towers they have in common in the same
+            # time slot. The common_elements is an array that shows for each real_trace how
+            # many towers they have in common with the recovered_trace
+            #
             common_elements = np.array([
-                self.get_traces_common_elements(trace, x) for x in real_traces
+                self.get_traces_common_elements(recovered_trace, real_trace)
+                for real_trace in real_traces
             ])
-            common_elements[used_traces] = -1
-            min_distance_index = np.argmax(common_elements)
-            acc.append(common_elements[min_distance_index])
-            used_traces[min_distance_index] = True
-            result.append(min_distance_index)
+            mapping_errors = np.array([
+                self.get_traces_distance_error(
+                    trace_1=recovered_trace,
+                    trace_2=real_trace
+                )
+                for real_trace in real_traces
+            ])
 
-        acc = np.array(acc)
-        global_accuracy = np.sum(acc / self.number_cycles) / self.number_users
-        return result, global_accuracy, acc
+            #
+            # Flag all the common_elements values of the real_traces that have been used
+            # So that they won't be selected as candidates
+            #
+            common_elements[used_traces] = -1
+
+            # Select the real_trace that matches the best with the recovered
+            if mapping_style == 'accuracy':
+                best_match_index = np.argmax(common_elements)
+            elif mapping_style == 'error':
+                best_match_index = np.argmin(mapping_errors)
+            else:
+                raise ValueError(
+                    f'Invalid mapping style {mapping_style}.'
+                    ' Select either "accuracy" or "error"'
+                )
+
+            mapping_accuracy[recovered_trace_index] = common_elements[best_match_index]
+            mapping_error[recovered_trace_index] = mapping_errors[best_match_index]
+
+            result[recovered_trace_index] = best_match_index
+
+            # Mark best match trace as used
+            used_traces[best_match_index] = True
+
+        mapping_accuracy = np.array(mapping_accuracy)
+
+        global_accuracy = np.sum(
+            mapping_accuracy / self.number_cycles) / self.number_users
+        return result, global_accuracy, mapping_accuracy, mapping_error
+
+    def map_traces_analysis(self, real_traces, mapping_style, k=10, n_jobs=-1):
+        return Parallel(n_jobs=n_jobs)(
+            delayed(self.map_traces)(real_traces, mapping_style)
+            for _ in range(k)
+        )

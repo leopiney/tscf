@@ -15,13 +15,16 @@ class TowersManager(object):
         self.vel_friction = vel_friction
 
         self.number_towers = towers.shape[0]
+        self.distances = self.generate_distances()
 
     def generate_distances(self):
         return np.array([
-            [
-                distance(self.towers[i], self.towers[j])
-                for j in range(self.number_towers)
-            ]
+            np.sqrt(
+                np.sum(
+                    (self.towers - self.towers[i]) ** 2,
+                    axis=1
+                )
+            )
             for i in range(self.number_towers)
         ])
 
@@ -52,8 +55,14 @@ class TowersManager(object):
         return [x, y]
 
     def get_nearest_tower(self, point):
-        distances = [distance(point, x) for x in self.towers]
-        return np.argmin(distances)
+        return np.argmin(
+            np.sqrt(
+                np.sum(
+                    (self.towers - point) ** 2,
+                    axis=1
+                )
+            )
+        )
 
     def plot_towers(self, figsize=(8, 8), annotate_towers=True):
         df_towers = pd.DataFrame(self.towers, columns=['x', 'y'])

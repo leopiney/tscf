@@ -61,7 +61,8 @@ class TraceSimulator(object):
 
             if step ** 2 != self.number_towers:
                 self.number_towers = step ** 2
-                print(f'WARNING: number of towers changed to {self.number_towers}')
+                print(
+                    f'WARNING: number of towers changed to {self.number_towers}')
 
             X, Y = np.mgrid[0:1:step * 1j, 0:1:step * 1j]
             positions = np.vstack([X.ravel(), Y.ravel()])
@@ -69,7 +70,7 @@ class TraceSimulator(object):
 
         self.towers_manager = TowersManager(self.towers, self.vel_friction)
 
-        self.distances = self.towers_manager.generate_distances()
+        self.distances = self.towers_manager.distances
         self.print(f'Took {time() - t_0} to create distrances matrix')
 
         t = time()
@@ -164,6 +165,7 @@ class TraceSimulator(object):
 
 class MobilitySimulator(object):
     """A simulator of mobility models for user traces"""
+
     def __init__(
         self,
         towers,
@@ -188,11 +190,10 @@ class MobilitySimulator(object):
         )
 
     def generate_traces(self):
-        traces = []
-        for i in range(self.number_cycles):
-            traces.append(np.copy(next(self.model)))
-
-        traces = np.array(traces)
+        traces = np.array([
+            np.copy(next(self.model))
+            for _ in range(self.number_cycles)
+        ])
         return traces.swapaxes(0, 1)
 
     def generate_tower_traces(self):
