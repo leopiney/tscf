@@ -2,10 +2,11 @@
 import pickle
 from time import time
 
+import fire
 import numpy as np
 
 from tracer.recover import TrajectoryRecovery
-from tracer.simulator import TraceSimulator
+from tracer.simulator import MobilitySimulator, TraceSimulator
 
 
 def evaluate_simulator(simulator, number_users, number_towers, sigma):
@@ -50,31 +51,45 @@ def evaluate_simulator(simulator, number_users, number_towers, sigma):
     )
 
 
-def evaluate_simulations():
+def evaluate_simulations(mobility_model):
     """Evaluates simulations on a grid of parameters for the simulators"""
     number_cycles = 24
 
-    params_number_users = [8, 16, 32, 64, 256, 512, 1024, 2048]
-    params_number_towers = [4**2, 10**2, 20**2, 30**2]
+    params_number_users = [8, 16, 32, 64, 256, 512]
+    params_number_towers = [4**2, 6**2, 10**2, 20**2, 30**2, 40**2]
     params_sigma = [0.00025, 0.0005, 0.005]
+    # params_velocity = [(0.005, 0.01), (0.1, 0.2), (0.1, 0.3)]
+    params_velocity = [(0.01, 0.01), (0.01, 0.02), (0.02, 0.04)]
 
     test_id = 0
-    for sigma in params_sigma:
+    for (sigma, velocity) in zip(params_sigma, params_velocity):
         for number_users in params_number_users:
             for number_towers in params_number_towers:
-                t0 = time()
+                t_0 = time()
                 print(f'{test_id}# Evaluating trace simulator with parameters:')
                 print(f'> Users: {number_users}')
                 print(f'> Towers: {number_towers}')
-                print(f'> Sigma: {sigma}\n')
 
-                simulator = TraceSimulator(
-                    number_users=number_users,
-                    number_towers=number_towers,
-                    number_cycles=number_cycles,
-                    sigma=sigma,
-                    verbose=True,
-                )
+                if mobility_model == 'custom':
+                    print(f'> Sigma: {sigma}\n')
+                    simulator = TraceSimulator(
+                        number_users=number_users,
+                        number_towers=number_towers,
+                        number_cycles=number_cycles,
+                        sigma=sigma,
+                        verbose=True,
+                    )
+                else:
+                    print(f'> Velocity: {velocity}\n')
+                    simulator = MobilitySimulator(
+                        number_users=number_users,
+                        number_towers=number_towers,
+                        number_cycles=number_cycles,
+                        velocity=velocity,
+                        wait_time_max=None,
+                        mobility_model=mobility_model,
+                        verbose=True,
+                    )
 
                 evaluate_simulator(
                     simulator,
@@ -84,8 +99,15 @@ def evaluate_simulations():
                 )
                 test_id += 1
 
-                print(f'Took {time() - t0} to complete evaluation\n\n')
+                print(f'Took {time() - t_0} to complete evaluation\n\n')
+
+
+class Evaluator(object):
+    """Evaluates the mobility models"""
+
+    def run(self, mobility_model='custom'):
+        evaluate_simulations(mobility_model)
 
 
 if __name__ == '__main__':
-    evaluate_simulations()
+    fire.Fire(Evaluator)

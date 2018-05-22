@@ -1,6 +1,5 @@
 """Towers and maps module"""
 import itertools
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
@@ -65,6 +64,8 @@ class TowersManager(object):
         )
 
     def plot_towers(self, figsize=(8, 8), annotate_towers=True):
+        import matplotlib.pyplot as plt
+
         df_towers = pd.DataFrame(self.towers, columns=['x', 'y'])
         ax = df_towers.plot.scatter(
             x='x',
@@ -90,6 +91,8 @@ class TowersManager(object):
         annotate_towers=True,
         verbose=False
     ):
+        import matplotlib.pyplot as plt
+
         ax = self.plot_towers(
             figsize=figsize,
             annotate_towers=annotate_towers

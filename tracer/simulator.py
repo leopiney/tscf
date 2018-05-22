@@ -12,6 +12,14 @@ from tracer.utils import softmax
 from tracer.utils import xamtfos
 
 
+MOBILITY_MODELS = {
+    'random_waypoint': random_waypoint,
+    'random_direction': random_direction,
+    'random_walk': random_walk,
+    'stochastic_walk': stochastic_walk,
+}
+
+
 class TraceSimulator(object):
     """A simulator of user traces"""
 
@@ -163,29 +171,40 @@ class MobilitySimulator(object):
     """A simulator of mobility models for user traces"""
 
     def __init__(
-        self,
-        towers,
-        number_users=100,
-        number_cycles=24,
-        velocity=(0.1, 0.3),
-        wt=1,
-        type="random_waypoint",
-        repeat=10,
+            self,
+            number_towers,
+            number_users=100,
+            number_cycles=24,
+            velocity=(0.1, 0.3),
+            wait_time_max=1,
+            mobility_model='random_waypoint',
+            repeat=1,
+            random_towers=False,
+            verbose=False
     ):
+        self.number_towers = number_towers
         self.number_users = number_users
         self.number_cycles = number_cycles
         self.velocity = velocity
-        self.wt = wt
-        self.towers = towers
-        self.number_towers = len(towers)
-        self.tw = TowersManager(self.towers)
+        self.wait_time_max = wait_time_max
         self.repeat = repeat
-        self.model = random_waypoint(
-            self.number_users, dimensions=(1, 1), velocity=self.velocity,
-            wt_max=self.wt
+        self.random_towers = random_towers
+        self.verbose = verbose
+
+        self.model = MOBILITY_MODELS[mobility_model](
+            self.number_users,
+            dimensions=(1, 1),
+            velocity=self.velocity,
+            wt_max=self.wait_time_max,
         )
 
+    def print(self, *args):
+        """Custom print function"""
+        if self.verbose:
+            print(*args)
+
     def generate_traces(self):
+        """Generate users traces though the simulation space"""
         traces = np.array([
             np.copy(next(self.model))
             for _ in range(self.number_cycles)
@@ -193,26 +212,47 @@ class MobilitySimulator(object):
         return traces.swapaxes(0, 1)
 
     def generate_tower_traces(self):
+        """Generates a trace of towers for each user
+
+        Transform the users positions thoughout the simulation space into a list of towers
+        by choosing the nearest tower for each of the points of the traces of the users.
+        """
         results = []
-        for trace in self.traces:
-            results.append([self.tw.get_nearest_tower(x) for x in trace])
+        for trace in self.traces_points:
+            results.append([self.towers_manager.get_nearest_tower(x)
+                            for x in trace])
         return np.tile(np.array(results), self.repeat)
 
     def generate_aggregate_data(self):
         """Returns how many users were in each step of the cycle based on traces
 
         Returns a matrix of shape (number_cycles, number_towers)"""
-        cycles = self.number_cycles * self.repeat
-        output = np.zeros((cycles, self.number_towers))
-
-        for cycle in range(cycles):
-            for user in range(self.number_users):
-                for tower in range(self.number_towers):
-                    output[cycle][tower] += self.tower_traces[user][cycle] == tower
-
-        return output
+        return np.array([
+            np.sum(self.traces == tower, axis=0)
+            for tower in range(self.number_towers)
+        ]).T
 
     def generate(self):
-        self.traces = self.generate_traces()
-        self.tower_traces = self.generate_tower_traces()
+        """Generate user traces using the mobility model and calculates the aggregated data"""
+        t_0 = time()
+        if self.random_towers:
+            self.towers = np.random.rand(self.number_towers, 2)
+        else:
+            step = np.ceil(np.sqrt(self.number_towers)).astype('int')
+
+            if step ** 2 != self.number_towers:
+                self.number_towers = step ** 2
+                print(
+                    f'WARNING: number of towers changed to {self.number_towers}')
+
+            X, Y = np.mgrid[0:1:step * 1j, 0:1:step * 1j]
+            positions = np.vstack([X.ravel(), Y.ravel()])
+            self.towers = positions.swapaxes(1, 0)
+
+        self.towers_manager = TowersManager(self.towers)
+
+        self.traces_points = self.generate_traces()
+        self.traces = self.generate_tower_traces()
         self.aggregated_data = self.generate_aggregate_data()
+
+        self.print(f'Took {time() - t_0} to generate all')

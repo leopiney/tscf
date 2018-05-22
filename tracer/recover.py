@@ -32,7 +32,6 @@ class TrajectoryRecovery(object):
 
     def build_distribution_matrix(self):
         L = []
-
         for cycle_counts in self.aggregated_data:
             L.append(
                 np.array(list(
