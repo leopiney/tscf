@@ -57,9 +57,10 @@ def evaluate_simulations(mobility_model):
 
     params_number_users = [8, 16, 32, 64, 256, 512]
     params_number_towers = [4**2, 6**2, 10**2, 20**2, 30**2, 40**2]
-    params_sigma = [0.00025, 0.0005, 0.005]
+    params_sigma = [0.00025, 0.0005, 0.005, 0.025]
     # params_velocity = [(0.005, 0.01), (0.1, 0.2), (0.1, 0.3)]
-    params_velocity = [(0.01, 0.01), (0.01, 0.02), (0.02, 0.04)]
+    # params_velocity = [(0.01, 0.01), (0.01, 0.02), (0.02, 0.04)]
+    params_velocity = [(0.04, 0.04), (0.04, 0.08), (0.08, 0.1), (0.1, 0.1)]
 
     test_id = 0
     for (sigma, velocity) in zip(params_sigma, params_velocity):
