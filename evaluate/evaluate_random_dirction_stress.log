@@ -1,0 +1,24 @@
+0# Evaluating trace simulator with parameters:
+> Users: 1024
+> Towers: 16
+> Velocity: (0.01, 0.01)
+
+Took 0.2753729820251465 to generate all
+Took 0.0020580291748046875 to create build distribution matrix
+Took 300.782457113266 to create recover traces from aggregated data
+Took 103.90117812156677 to map traces recovered traces to real ones
+Overall accuracy: 0.7609456380208334
+Overall error: 2.518849924751744
+Overall accuracy std: 0.00016276041666665189
+Overall error std: 2.967624714232261
+Took 404.98301887512207 to complete evaluation
+
+
+1# Evaluating trace simulator with parameters:
+> Users: 1024
+> Towers: 36
+> Velocity: (0.01, 0.01)
+
+Took 0.2886931896209717 to generate all
+Took 0.0024101734161376953 to create build distribution matrix
+Took 443.3706922531128 to create recover traces from aggregated data
