@@ -56,7 +56,7 @@ def evaluate_simulations(mobility_model):
     number_cycles = 24
 
     # params_number_users = [8, 16, 32, 64, 256, 512]
-    params_number_users = [8, 16, 32, 64, 256, 512, 1024, 2048, 4096, 8192, 16384]
+    params_number_users = [4096, 8192]
     # params_number_towers = [4**2, 6**2, 10**2, 20**2, 30**2, 40**2]
     params_number_towers = [16, 36]
     # params_sigma = [0.00025, 0.0005, 0.005, 0.025]
