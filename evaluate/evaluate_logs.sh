@@ -1,48 +1,26 @@
 awk -f extract_logs.awk evaluate_custom.log > evaluate_custom.csv
-
 awk -f extract_logs.awk evaluate_random_direction.log > evaluate_random_direction.csv
-awk -f extract_logs.awk evaluate_random_direction_2.log > evaluate_random_direction_2.csv
-awk -f extract_logs.awk evaluate_random_direction_3.log > evaluate_random_direction_3.csv
-awk -f extract_logs.awk evaluate_random_direction_4.log > evaluate_random_direction_4.csv
-awk -f extract_logs.awk evaluate_random_direction_5.log > evaluate_random_direction_5.csv
-awk -f extract_logs.awk evaluate_random_direction_6.log > evaluate_random_direction_6.csv
-awk -f extract_logs.awk evaluate_random_direction_7.log > evaluate_random_direction_7.csv
-awk -f extract_logs.awk evaluate_random_direction_8.log > evaluate_random_direction_8.csv
-awk -f extract_logs.awk evaluate_random_direction_9.log > evaluate_random_direction_9.csv
-awk -f extract_logs.awk evaluate_random_direction_10.log > evaluate_random_direction_10.csv
-awk -f extract_logs.awk evaluate_random_direction_11.log > evaluate_random_direction_11.csv
-awk -f extract_logs.awk evaluate_random_direction_12.log > evaluate_random_direction_12.csv
-awk -f extract_logs.awk evaluate_random_direction_13.log > evaluate_random_direction_13.csv
-awk -f extract_logs.awk evaluate_random_direction_14.log > evaluate_random_direction_14.csv
-awk -f extract_logs.awk evaluate_random_direction_15.log > evaluate_random_direction_15.csv
-awk -f extract_logs.awk evaluate_random_direction_16.log > evaluate_random_direction_16.csv
-awk -f extract_logs.awk evaluate_random_direction_17.log > evaluate_random_direction_17.csv
-awk -f extract_logs.awk evaluate_random_direction_18.log > evaluate_random_direction_18.csv
-
 awk -f extract_logs.awk evaluate_random_waypoint.log > evaluate_random_waypoint.csv
-awk -f extract_logs.awk evaluate_random_waypoint_2.log > evaluate_random_waypoint_2.csv
-awk -f extract_logs.awk evaluate_random_waypoint_3.log > evaluate_random_waypoint_3.csv
-awk -f extract_logs.awk evaluate_random_waypoint_4.log > evaluate_random_waypoint_4.csv
-awk -f extract_logs.awk evaluate_random_waypoint_5.log > evaluate_random_waypoint_5.csv
-awk -f extract_logs.awk evaluate_random_waypoint_6.log > evaluate_random_waypoint_6.csv
-awk -f extract_logs.awk evaluate_random_waypoint_7.log > evaluate_random_waypoint_7.csv
-awk -f extract_logs.awk evaluate_random_waypoint_8.log > evaluate_random_waypoint_8.csv
-awk -f extract_logs.awk evaluate_random_waypoint_9.log > evaluate_random_waypoint_9.csv
-awk -f extract_logs.awk evaluate_random_waypoint_10.log > evaluate_random_waypoint_10.csv
-awk -f extract_logs.awk evaluate_random_waypoint_11.log > evaluate_random_waypoint_11.csv
-awk -f extract_logs.awk evaluate_random_waypoint_12.log > evaluate_random_waypoint_12.csv
-awk -f extract_logs.awk evaluate_random_waypoint_13.log > evaluate_random_waypoint_13.csv
-awk -f extract_logs.awk evaluate_random_waypoint_14.log > evaluate_random_waypoint_14.csv
-awk -f extract_logs.awk evaluate_random_waypoint_15.log > evaluate_random_waypoint_15.csv
-awk -f extract_logs.awk evaluate_random_waypoint_16.log > evaluate_random_waypoint_16.csv
-awk -f extract_logs.awk evaluate_random_waypoint_17.log > evaluate_random_waypoint_17.csv
-awk -f extract_logs.awk evaluate_random_waypoint_18.log > evaluate_random_waypoint_18.csv
 
-awk -f extract_logs.awk evaluate_custom_3.log > evaluate_custom_3.csv
-awk -f extract_logs.awk evaluate_custom_4.log > evaluate_custom_4.csv
-awk -f extract_logs.awk evaluate_custom_5.log > evaluate_custom_5.csv
-awk -f extract_logs.awk evaluate_custom_6.log > evaluate_custom_6.csv
-awk -f extract_logs.awk evaluate_custom_7.log > evaluate_custom_7.csv
-awk -f extract_logs.awk evaluate_custom_8.log > evaluate_custom_8.csv
-awk -f extract_logs.awk evaluate_custom_9.log > evaluate_custom_9.csv
-awk -f extract_logs.awk evaluate_custom_10.log > evaluate_custom_10.csv
+array=( 3 4 5 6 7 8 9 10 )
+
+for i in "${array[@]}"
+do
+  awk -f extract_logs.awk evaluate_custom_$i.log > evaluate_custom_$i.csv
+done
+
+#
+# Real tests evaluation for random direction and random waypoint
+#
+
+array=( 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 20 21 22 23 24 25 26 27 28 29 )
+
+for i in "${array[@]}"
+do
+  awk -f extract_logs.awk evaluate_random_direction_$i.log > evaluate_random_direction_$i.csv
+done
+
+for i in "${array[@]}"
+do
+  awk -f extract_logs.awk evaluate_random_waypoint_$i.log > evaluate_random_waypoint_$i.csv
+done

@@ -6,10 +6,10 @@ import fire
 import numpy as np
 
 from tracer.recover import TrajectoryRecovery
-from tracer.simulator import MobilitySimulator, TraceSimulator
+from tracer.simulator import MobilitySimulator
 
 
-def evaluate_simulator(simulator, number_users, number_towers, sigma):
+def evaluate_simulator(simulator, number_users, number_towers, velocity, mobility_model):
     """Evaluates a simulator"""
     # Generate traces
     simulator.generate()
@@ -31,6 +31,10 @@ def evaluate_simulator(simulator, number_users, number_towers, sigma):
     print(f'Took {time() - t} to create recover traces from aggregated data')
 
     t = time()
+
+    #
+    # Gets the recovered traces, the accuracy and error for each assignment
+    #
     k_analysis = trajectory_recovery.map_traces_analysis(
         simulator.traces, mapping_style='accuracy', n_jobs=-1)
     print(f'Took {time() - t} to map traces recovered traces to real ones')
@@ -45,9 +49,34 @@ def evaluate_simulator(simulator, number_users, number_towers, sigma):
     print(f'Overall accuracy std: {overall_accuracy_std}')
     print(f'Overall error std: {overall_error_std}')
 
+    #
+    # Also append the simulator attributes to store this information for further analysis.
+    #
+    # The analysis information is stored as a list with the following items:
+    #
+    # [
+    #   map_results,
+    #   global_accuracy,
+    #   map_accuracy,
+    #   map_error,
+    #   towers,
+    #   traces,
+    #   aggregated_data,
+    # ]
+    #
+    k_analysis.append(simulator.towers)
+    k_analysis.append(simulator.traces)
+    k_analysis.append(simulator.aggregated_data)
+
     pickle.dump(
         k_analysis,
-        open(f'.tmp_eval_u{number_users}_t{number_towers}_s{sigma}.pkl', 'wb')
+        open('_'.join([
+            './evaluate/.tmp_eval',
+            f'm_{mobility_model}',
+            f'u_{number_users}',
+            f't_{number_towers}',
+            f'v_{velocity}.pkl',
+        ]), 'wb')
     )
 
 
@@ -55,52 +84,36 @@ def evaluate_simulations(mobility_model):
     """Evaluates simulations on a grid of parameters for the simulators"""
     number_cycles = 24
 
-    # params_number_users = [8, 16, 32, 64, 256, 512]
-    params_number_users = [4096, 8192]
-    # params_number_towers = [4**2, 6**2, 10**2, 20**2, 30**2, 40**2]
-    params_number_towers = [16, 36]
-    # params_sigma = [0.00025, 0.0005, 0.005, 0.025]
-    params_sigma = [0.0]
-    params_velocity = [(0.01, 0.01)]
-    # params_velocity = [(0.005, 0.01), (0.1, 0.2), (0.1, 0.3)]
-    # params_velocity = [(0.01, 0.01), (0.01, 0.02), (0.02, 0.04)]
-    # params_velocity = [(0.04, 0.04), (0.04, 0.08), (0.08, 0.1), (0.1, 0.1)]
+    params_number_users = [x**2 for x in (4, 8, 12, 16, 20, 24)]
+    params_number_towers = [x**2 for x in (4, 8, 12, 16, 20, 24, 28, 32)]
+    params_velocity = [(0.01, 0.01), (0.05, 0.05), (0.1, 0.1)]
 
     test_id = 0
-    for (sigma, velocity) in zip(params_sigma, params_velocity):
+    for velocity in params_velocity:
         for number_users in params_number_users:
             for number_towers in params_number_towers:
                 t_0 = time()
                 print(f'{test_id}# Evaluating trace simulator with parameters:')
                 print(f'> Users: {number_users}')
                 print(f'> Towers: {number_towers}')
+                print(f'> Velocity: {velocity}\n')
 
-                if mobility_model == 'custom':
-                    print(f'> Sigma: {sigma}\n')
-                    simulator = TraceSimulator(
-                        number_users=number_users,
-                        number_towers=number_towers,
-                        number_cycles=number_cycles,
-                        sigma=sigma,
-                        verbose=True,
-                    )
-                else:
-                    print(f'> Velocity: {velocity}\n')
-                    simulator = MobilitySimulator(
-                        number_users=number_users,
-                        number_towers=number_towers,
-                        number_cycles=number_cycles,
-                        velocity=velocity,
-                        wait_time_max=None,
-                        mobility_model=mobility_model,
-                        verbose=True,
-                    )
+                simulator = MobilitySimulator(
+                    number_users=number_users,
+                    number_towers=number_towers,
+                    number_cycles=number_cycles,
+                    velocity=velocity,
+                    wait_time_max=None,
+                    mobility_model=mobility_model,
+                    verbose=True,
+                )
 
                 evaluate_simulator(
                     simulator,
                     number_users=number_users,
                     number_towers=number_towers,
-                    sigma=sigma
+                    velocity=velocity,
+                    mobility_model=mobility_model,
                 )
                 test_id += 1
 
