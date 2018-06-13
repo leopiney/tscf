@@ -1,0 +1,2304 @@
+0# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 16
+> Velocity: (0.01, 0.01)
+
+Took 0.02290201187133789 to generate all
+Took 0.0006992816925048828 to create build distribution matrix
+Took 0.09184694290161133 to create recover traces from aggregated data
+Took 0.8962819576263428 to map traces recovered traces to real ones
+Overall accuracy: 0.8619791666666667
+Overall error: 1.34375
+Overall accuracy std: 0.0
+Overall error std: 1.824047268439061
+Took 1.0152192115783691 to complete evaluation
+
+
+1# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 64
+> Velocity: (0.01, 0.01)
+
+Took 0.014226913452148438 to generate all
+Took 0.0010039806365966797 to create build distribution matrix
+Took 0.47174906730651855 to create recover traces from aggregated data
+Took 0.7259438037872314 to map traces recovered traces to real ones
+Overall accuracy: 0.8333333333333333
+Overall error: 0.7778391960649181
+Overall accuracy std: 0.0
+Overall error std: 1.0027674734963272
+Took 1.217628002166748 to complete evaluation
+
+
+2# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 144
+> Velocity: (0.01, 0.01)
+
+Took 0.023857831954956055 to generate all
+Took 0.003803730010986328 to create build distribution matrix
+Took 0.41902899742126465 to create recover traces from aggregated data
+Took 0.4935297966003418 to map traces recovered traces to real ones
+Overall accuracy: 0.8307291666666667
+Overall error: 0.6035648192527823
+Overall accuracy std: 0.0
+Overall error std: 0.7424794607720444
+Took 0.9475719928741455 to complete evaluation
+
+
+3# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 256
+> Velocity: (0.01, 0.01)
+
+Took 0.041023969650268555 to generate all
+Took 0.0046749114990234375 to create build distribution matrix
+Took 0.25730085372924805 to create recover traces from aggregated data
+Took 0.9445240497589111 to map traces recovered traces to real ones
+Overall accuracy: 0.9427083333333334
+Overall error: 0.15905066775290824
+Overall accuracy std: 0.0
+Overall error std: 0.2967373104001727
+Took 1.31044602394104 to complete evaluation
+
+
+4# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 400
+> Velocity: (0.01, 0.01)
+
+Took 0.04015922546386719 to generate all
+Took 0.05632185935974121 to create build distribution matrix
+Took 0.24991583824157715 to create recover traces from aggregated data
+Took 0.9832198619842529 to map traces recovered traces to real ones
+Overall accuracy: 0.8630208333333332
+Overall error: 0.422615388691643
+Overall accuracy std: 0.003125
+Overall error std: 0.8483009616468956
+Took 1.3458952903747559 to complete evaluation
+
+
+5# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 576
+> Velocity: (0.01, 0.01)
+
+Took 0.16635394096374512 to generate all
+Took 0.06827592849731445 to create build distribution matrix
+Took 0.5239601135253906 to create recover traces from aggregated data
+Took 0.8264260292053223 to map traces recovered traces to real ones
+Overall accuracy: 0.7942708333333333
+Overall error: 0.38560642193904393
+Overall accuracy std: 0.0
+Overall error std: 0.3980640949484975
+Took 1.630364179611206 to complete evaluation
+
+
+6# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 784
+> Velocity: (0.01, 0.01)
+
+Took 0.46634769439697266 to generate all
+Took 0.02957892417907715 to create build distribution matrix
+Took 0.593853235244751 to create recover traces from aggregated data
+Took 1.3494799137115479 to map traces recovered traces to real ones
+Overall accuracy: 0.84375
+Overall error: 0.4200161328515627
+Overall accuracy std: 0.0
+Overall error std: 0.7258250586127926
+Took 2.6026670932769775 to complete evaluation
+
+
+7# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 1024
+> Velocity: (0.01, 0.01)
+
+Took 0.4700736999511719 to generate all
+Took 0.178757905960083 to create build distribution matrix
+Took 0.1713087558746338 to create recover traces from aggregated data
+Took 1.7159781455993652 to map traces recovered traces to real ones
+Overall accuracy: 0.953125
+Overall error: 0.049692770905227966
+Overall accuracy std: 0.0
+Overall error std: 0.09472915029886766
+Took 2.894414186477661 to complete evaluation
+
+
+8# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 16
+> Velocity: (0.01, 0.01)
+
+Took 0.08758711814880371 to generate all
+Took 0.000997781753540039 to create build distribution matrix
+Took 2.033560037612915 to create recover traces from aggregated data
+Took 7.111715793609619 to map traces recovered traces to real ones
+Overall accuracy: 0.5533854166666666
+Overall error: 5.685427413892895
+Overall accuracy std: 0.0013020833333333038
+Overall error std: 3.7573324861555766
+Took 9.242336988449097 to complete evaluation
+
+
+9# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 64
+> Velocity: (0.01, 0.01)
+
+Took 0.11333870887756348 to generate all
+Took 0.0020248889923095703 to create build distribution matrix
+Took 1.4878718852996826 to create recover traces from aggregated data
+Took 6.341498851776123 to map traces recovered traces to real ones
+Overall accuracy: 0.4858072916666667
+Overall error: 4.317825842237069
+Overall accuracy std: 0.005468750000000022
+Overall error std: 3.511229969662447
+Took 7.960411787033081 to complete evaluation
+
+
+10# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 144
+> Velocity: (0.01, 0.01)
+
+Took 0.16605806350708008 to generate all
+Took 0.003813028335571289 to create build distribution matrix
+Took 1.807621955871582 to create recover traces from aggregated data
+Took 5.601737976074219 to map traces recovered traces to real ones
+Overall accuracy: 0.4985677083333332
+Overall error: 2.9072774745877306
+Overall accuracy std: 0.005468749999999978
+Overall error std: 2.9469000794347826
+Took 7.590681076049805 to complete evaluation
+
+
+11# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 256
+> Velocity: (0.01, 0.01)
+
+Took 0.0828561782836914 to generate all
+Took 0.003412961959838867 to create build distribution matrix
+Took 1.8165509700775146 to create recover traces from aggregated data
+Took 4.632361888885498 to map traces recovered traces to real ones
+Overall accuracy: 0.6837239583333334
+Overall error: 1.4837871577034663
+Overall accuracy std: 0.010677083333333304
+Overall error std: 3.694632873698045
+Took 6.656155347824097 to complete evaluation
+
+
+12# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 400
+> Velocity: (0.01, 0.01)
+
+Took 0.10514497756958008 to generate all
+Took 0.00490880012512207 to create build distribution matrix
+Took 3.227376937866211 to create recover traces from aggregated data
+Took 9.51516580581665 to map traces recovered traces to real ones
+Overall accuracy: 0.704296875
+Overall error: 0.7330986936493593
+Overall accuracy std: 0.00026041666666665186
+Overall error std: 0.7911035666103368
+Took 12.866367101669312 to complete evaluation
+
+
+13# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 576
+> Velocity: (0.01, 0.01)
+
+Took 0.48778700828552246 to generate all
+Took 0.10942888259887695 to create build distribution matrix
+Took 2.5526061058044434 to create recover traces from aggregated data
+Took 10.554563999176025 to map traces recovered traces to real ones
+Overall accuracy: 0.6897135416666667
+Overall error: 1.0472031832540842
+Overall accuracy std: 0.017447916666666653
+Overall error std: 1.8239412908711556
+Took 13.726526021957397 to complete evaluation
+
+
+14# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 784
+> Velocity: (0.01, 0.01)
+
+Took 0.6323959827423096 to generate all
+Took 0.06331872940063477 to create build distribution matrix
+Took 2.043257713317871 to create recover traces from aggregated data
+Took 9.856346845626831 to map traces recovered traces to real ones
+Overall accuracy: 0.7304687499999999
+Overall error: 0.5189803212180619
+Overall accuracy std: 0.0026041666666666518
+Overall error std: 0.6005628785027729
+Took 12.622445821762085 to complete evaluation
+
+
+15# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 1024
+> Velocity: (0.01, 0.01)
+
+Took 0.782055139541626 to generate all
+Took 0.01801300048828125 to create build distribution matrix
+Took 2.684272050857544 to create recover traces from aggregated data
+Took 11.347162008285522 to map traces recovered traces to real ones
+Overall accuracy: 0.7688802083333334
+Overall error: 0.3818211898554368
+Overall accuracy std: 0.0013020833333333038
+Overall error std: 0.48377706899911155
+Took 15.302526235580444 to complete evaluation
+
+
+16# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 16
+> Velocity: (0.01, 0.01)
+
+Took 0.09381294250488281 to generate all
+Took 0.0013349056243896484 to create build distribution matrix
+Took 7.8273820877075195 to create recover traces from aggregated data
+Took 27.26881194114685 to map traces recovered traces to real ones
+Overall accuracy: 0.6520254629629629
+Overall error: 4.347058172966208
+Overall accuracy std: 0.008333333333333304
+Overall error std: 3.680853322601291
+Took 35.20476531982422 to complete evaluation
+
+
+17# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 64
+> Velocity: (0.01, 0.01)
+
+Took 0.280364990234375 to generate all
+Took 0.0012822151184082031 to create build distribution matrix
+Took 13.34270167350769 to create recover traces from aggregated data
+Took 21.281232118606567 to map traces recovered traces to real ones
+Overall accuracy: 0.3622106481481482
+Overall error: 6.699978347466405
+Overall accuracy std: 0.003587962962962976
+Overall error std: 3.4756735903556057
+Took 34.92278981208801 to complete evaluation
+
+
+18# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 144
+> Velocity: (0.01, 0.01)
+
+Took 0.884382963180542 to generate all
+Took 0.18106913566589355 to create build distribution matrix
+Took 17.293715000152588 to create recover traces from aggregated data
+Took 13.170617818832397 to map traces recovered traces to real ones
+Overall accuracy: 0.3264467592592592
+Overall error: 5.777431516053908
+Overall accuracy std: 0.004513888888888862
+Overall error std: 3.350619942855264
+Took 31.54963779449463 to complete evaluation
+
+
+19# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 256
+> Velocity: (0.01, 0.01)
+
+Took 0.9839270114898682 to generate all
+Took 0.0690000057220459 to create build distribution matrix
+Took 20.60040593147278 to create recover traces from aggregated data
+Took 12.803137063980103 to map traces recovered traces to real ones
+Overall accuracy: 0.3009259259259259
+Overall error: 5.418692412781752
+Overall accuracy std: 0.001736111111111116
+Overall error std: 3.4828868293340753
+Took 34.51713037490845 to complete evaluation
+
+
+20# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 400
+> Velocity: (0.01, 0.01)
+
+Took 0.7517070770263672 to generate all
+Took 0.06628918647766113 to create build distribution matrix
+Took 20.305952072143555 to create recover traces from aggregated data
+Took 37.153985023498535 to map traces recovered traces to real ones
+Overall accuracy: 0.33790509259259255
+Overall error: 3.6677417442135107
+Overall accuracy std: 0.0027777777777777905
+Overall error std: 3.096744849059755
+Took 58.411816120147705 to complete evaluation
+
+
+21# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 576
+> Velocity: (0.01, 0.01)
+
+Took 0.9068319797515869 to generate all
+Took 0.05416226387023926 to create build distribution matrix
+Took 27.068292140960693 to create recover traces from aggregated data
+Took 37.905381202697754 to map traces recovered traces to real ones
+Overall accuracy: 0.3403935185185185
+Overall error: 4.355362609117347
+Overall accuracy std: 0.006134259259259256
+Overall error std: 3.7917520705396823
+Took 66.07281994819641 to complete evaluation
+
+
+22# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 784
+> Velocity: (0.01, 0.01)
+
+Took 0.880605936050415 to generate all
+Took 0.09743595123291016 to create build distribution matrix
+Took 12.156861066818237 to create recover traces from aggregated data
+Took 46.66370677947998 to map traces recovered traces to real ones
+Overall accuracy: 0.501736111111111
+Overall error: 1.9665480017590524
+Overall accuracy std: 0.008680555555555535
+Overall error std: 2.9546387382277293
+Took 59.96689581871033 to complete evaluation
+
+
+23# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 1024
+> Velocity: (0.01, 0.01)
+
+Took 0.8930158615112305 to generate all
+Took 0.1683492660522461 to create build distribution matrix
+Took 7.373096942901611 to create recover traces from aggregated data
+Took 51.7101469039917 to map traces recovered traces to real ones
+Overall accuracy: 0.5629050925925927
+Overall error: 1.5696108984767383
+Overall accuracy std: 0.007870370370370371
+Overall error std: 2.9131823785504967
+Took 60.41184401512146 to complete evaluation
+
+
+24# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 16
+> Velocity: (0.01, 0.01)
+
+Took 0.5298471450805664 to generate all
+Took 0.03517007827758789 to create build distribution matrix
+Took 46.994303941726685 to create recover traces from aggregated data
+Took 60.33440828323364 to map traces recovered traces to real ones
+Overall accuracy: 0.6679361979166668
+Overall error: 4.19248784934482
+Overall accuracy std: 0.0005859375
+Overall error std: 3.7143634756713584
+Took 107.9276909828186 to complete evaluation
+
+
+25# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 64
+> Velocity: (0.01, 0.01)
+
+Took 1.7331030368804932 to generate all
+Took 0.0996091365814209 to create build distribution matrix
+Took 70.8795440196991 to create recover traces from aggregated data
+Took 58.48450684547424 to map traces recovered traces to real ones
+Overall accuracy: 0.3802734375
+Overall error: 6.59525345461468
+Overall accuracy std: 0.005338541666666696
+Overall error std: 3.586343994170629
+Took 131.23136186599731 to complete evaluation
+
+
+26# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 144
+> Velocity: (0.01, 0.01)
+
+Took 1.6366088390350342 to generate all
+Took 0.004923105239868164 to create build distribution matrix
+Took 73.07108521461487 to create recover traces from aggregated data
+Took 51.52336001396179 to map traces recovered traces to real ones
+Overall accuracy: 0.2875
+Overall error: 6.517687496827688
+Overall accuracy std: 0.00013020833333332593
+Overall error std: 3.5436034136067
+Took 126.35714411735535 to complete evaluation
+
+
+27# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 256
+> Velocity: (0.01, 0.01)
+
+Took 0.9488809108734131 to generate all
+Took 0.04446077346801758 to create build distribution matrix
+Took 78.79908728599548 to create recover traces from aggregated data
+Took 50.57303786277771 to map traces recovered traces to real ones
+Overall accuracy: 0.2472005208333333
+Overall error: 6.670058196992699
+Overall accuracy std: 0.005143229166666652
+Overall error std: 3.3953563105008824
+Took 130.454843044281 to complete evaluation
+
+
+28# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 400
+> Velocity: (0.01, 0.01)
+
+Took 0.7049810886383057 to generate all
+Took 0.03297305107116699 to create build distribution matrix
+Took 87.7587308883667 to create recover traces from aggregated data
+Took 101.3961672782898 to map traces recovered traces to real ones
+Overall accuracy: 0.21858723958333331
+Overall error: 6.273678671564943
+Overall accuracy std: 0.00032552083333333706
+Overall error std: 3.3138565791013352
+Took 189.96601676940918 to complete evaluation
+
+
+29# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 576
+> Velocity: (0.01, 0.01)
+
+Took 3.0443620681762695 to generate all
+Took 0.12403082847595215 to create build distribution matrix
+Took 99.48800492286682 to create recover traces from aggregated data
+Took 94.17148470878601 to map traces recovered traces to real ones
+Overall accuracy: 0.24062499999999995
+Overall error: 5.6932007663208255
+Overall accuracy std: 0.0008463541666666629
+Overall error std: 3.660632729317948
+Took 197.10461807250977 to complete evaluation
+
+
+30# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 784
+> Velocity: (0.01, 0.01)
+
+Took 1.7682688236236572 to generate all
+Took 0.13296175003051758 to create build distribution matrix
+Took 101.4740560054779 to create recover traces from aggregated data
+Took 92.64090323448181 to map traces recovered traces to real ones
+Overall accuracy: 0.26949869791666664
+Overall error: 4.164353456789135
+Overall accuracy std: 0.00026041666666667404
+Overall error std: 3.2634478259535107
+Took 196.24821400642395 to complete evaluation
+
+
+31# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 1024
+> Velocity: (0.01, 0.01)
+
+Took 1.301642894744873 to generate all
+Took 0.08536887168884277 to create build distribution matrix
+Took 91.85495209693909 to create recover traces from aggregated data
+Took 103.4480950832367 to map traces recovered traces to real ones
+Overall accuracy: 0.2988932291666667
+Overall error: 3.779547334519234
+Overall accuracy std: 0.005013020833333326
+Overall error std: 3.104625443778649
+Took 196.9540660381317 to complete evaluation
+
+
+32# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 16
+> Velocity: (0.01, 0.01)
+
+Took 0.6927790641784668 to generate all
+Took 0.002229928970336914 to create build distribution matrix
+Took 142.72516298294067 to create recover traces from aggregated data
+Took 135.43745517730713 to map traces recovered traces to real ones
+Overall accuracy: 0.6815625
+Overall error: 3.7595461449357495
+Overall accuracy std: 0.002083333333333259
+Overall error std: 3.337241780712679
+Took 279.10238695144653 to complete evaluation
+
+
+33# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 64
+> Velocity: (0.01, 0.01)
+
+Took 1.9602410793304443 to generate all
+Took 0.002978086471557617 to create build distribution matrix
+Took 228.50728702545166 to create recover traces from aggregated data
+Took 131.75030207633972 to map traces recovered traces to real ones
+Overall accuracy: 0.4024374999999999
+Overall error: 6.27396667737176
+Overall accuracy std: 0.002833333333333332
+Overall error std: 3.7520606208323364
+Took 362.37176609039307 to complete evaluation
+
+
+34# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 144
+> Velocity: (0.01, 0.01)
+
+Took 1.4003641605377197 to generate all
+Took 0.04878997802734375 to create build distribution matrix
+Took 283.52196311950684 to create recover traces from aggregated data
+Took 130.32228183746338 to map traces recovered traces to real ones
+Overall accuracy: 0.26027083333333334
+Overall error: 7.405761542189531
+Overall accuracy std: 0.0007083333333333331
+Overall error std: 3.3763169618432762
+Took 415.3790168762207 to complete evaluation
+
+
+35# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 256
+> Velocity: (0.01, 0.01)
+
+Took 1.3074321746826172 to generate all
+Took 0.03407692909240723 to create build distribution matrix
+Took 273.6215479373932 to create recover traces from aggregated data
+Took 128.31359791755676 to map traces recovered traces to real ones
+Overall accuracy: 0.2280625
+Overall error: 7.017678321077016
+Overall accuracy std: 0.0034583333333333406
+Overall error std: 3.391784806060788
+Took 403.42134284973145 to complete evaluation
+
+
+36# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 400
+> Velocity: (0.01, 0.01)
+
+Took 1.50537109375 to generate all
+Took 0.04509687423706055 to create build distribution matrix
+Took 303.3101999759674 to create recover traces from aggregated data
+Took 233.8067228794098 to map traces recovered traces to real ones
+Overall accuracy: 0.21322916666666666
+Overall error: 6.728987552422087
+Overall accuracy std: 0.0006249999999999978
+Overall error std: 3.5019517176168837
+Took 538.8338558673859 to complete evaluation
+
+
+37# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 576
+> Velocity: (0.01, 0.01)
+
+Took 1.7095050811767578 to generate all
+Took 0.0452730655670166 to create build distribution matrix
+Took 367.5477659702301 to create recover traces from aggregated data
+Took 230.7932448387146 to map traces recovered traces to real ones
+Overall accuracy: 0.197625
+Overall error: 6.370871945068372
+Overall accuracy std: 0.0014166666666666772
+Overall error std: 3.6318210456940925
+Took 600.2884862422943 to complete evaluation
+
+
+38# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 784
+> Velocity: (0.01, 0.01)
+
+Took 1.8597068786621094 to generate all
+Took 0.08163714408874512 to create build distribution matrix
+Took 356.8013069629669 to create recover traces from aggregated data
+Took 226.15433502197266 to map traces recovered traces to real ones
+Overall accuracy: 0.18814583333333332
+Overall error: 6.358061425292299
+Overall accuracy std: 0.0001666666666666705
+Overall error std: 3.556155307630784
+Took 585.2068469524384 to complete evaluation
+
+
+39# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 1024
+> Velocity: (0.01, 0.01)
+
+Took 2.226440906524658 to generate all
+Took 0.13399696350097656 to create build distribution matrix
+Took 336.8991668224335 to create recover traces from aggregated data
+Took 230.60221695899963 to map traces recovered traces to real ones
+Overall accuracy: 0.19154166666666667
+Overall error: 5.888153240093618
+Overall accuracy std: 0.0012916666666666576
+Overall error std: 3.4486013686914716
+Took 570.1237301826477 to complete evaluation
+
+
+40# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 16
+> Velocity: (0.01, 0.01)
+
+Took 1.4933481216430664 to generate all
+Took 0.0027589797973632812 to create build distribution matrix
+Took 401.69998264312744 to create recover traces from aggregated data
+Took 289.9230010509491 to map traces recovered traces to real ones
+Overall accuracy: 0.7184027777777778
+Overall error: 3.145938913556755
+Overall accuracy std: 0.0006944444444444642
+Overall error std: 3.170421825655822
+Took 693.4719080924988 to complete evaluation
+
+
+41# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 64
+> Velocity: (0.01, 0.01)
+
+Took 1.5140478610992432 to generate all
+Took 0.03350400924682617 to create build distribution matrix
+Took 786.8925590515137 to create recover traces from aggregated data
+Took 283.6846318244934 to map traces recovered traces to real ones
+Overall accuracy: 0.43285590277777775
+Overall error: 5.722928229274652
+Overall accuracy std: 0.003645833333333326
+Overall error std: 3.7741681535243803
+Took 1072.452320098877 to complete evaluation
+
+
+42# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 144
+> Velocity: (0.01, 0.01)
+
+Took 1.5088016986846924 to generate all
+Took 0.03415083885192871 to create build distribution matrix
+Took 980.0238289833069 to create recover traces from aggregated data
+Took 262.56954860687256 to map traces recovered traces to real ones
+Overall accuracy: 0.27669270833333337
+Overall error: 7.032636110718717
+Overall accuracy std: 0.0005787037037037202
+Overall error std: 3.497257235958578
+Took 1244.590166091919 to complete evaluation
+
+
+43# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 256
+> Velocity: (0.01, 0.01)
+
+Took 1.8868651390075684 to generate all
+Took 0.0413358211517334 to create build distribution matrix
+Took 1090.3850140571594 to create recover traces from aggregated data
+Took 243.3707036972046 to map traces recovered traces to real ones
+Overall accuracy: 0.2198784722222223
+Overall error: 7.1880576601379795
+Overall accuracy std: 0.001244212962962954
+Overall error std: 3.5236044040795877
+Took 1336.203195810318 to complete evaluation
+
+
+44# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 400
+> Velocity: (0.01, 0.01)
+
+Took 2.366316795349121 to generate all
+Took 0.04697108268737793 to create build distribution matrix
+Took 1151.3965518474579 to create recover traces from aggregated data
+Took 460.03650188446045 to map traces recovered traces to real ones
+Overall accuracy: 0.18744212962962964
+Overall error: 7.23070733646304
+Overall accuracy std: 0.00017361111111110494
+Overall error std: 3.355681765588204
+Took 1614.3458542823792 to complete evaluation
+
+
+45# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 576
+> Velocity: (0.01, 0.01)
+
+Took 2.1341052055358887 to generate all
+Took 0.04778909683227539 to create build distribution matrix
+Took 1265.9033138751984 to create recover traces from aggregated data
+Took 465.3280439376831 to map traces recovered traces to real ones
+Overall accuracy: 0.17216435185185183
+Overall error: 6.728651338213823
+Overall accuracy std: 0.0007233796296296169
+Overall error std: 3.368004971031572
+Took 1733.881000995636 to complete evaluation
+
+
+46# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 784
+> Velocity: (0.01, 0.01)
+
+Took 2.548902988433838 to generate all
+Took 0.0778510570526123 to create build distribution matrix
+Took 1207.8249168395996 to create recover traces from aggregated data
+Took 476.4387390613556 to map traces recovered traces to real ones
+Overall accuracy: 0.1705005787037037
+Overall error: 6.561829651424977
+Overall accuracy std: 0.00014467592592593004
+Overall error std: 3.5615614855462683
+Took 1687.4889569282532 to complete evaluation
+
+
+47# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 1024
+> Velocity: (0.01, 0.01)
+
+Took 2.8861818313598633 to generate all
+Took 0.10911107063293457 to create build distribution matrix
+Took 1044.832664012909 to create recover traces from aggregated data
+Took 490.5988960266113 to map traces recovered traces to real ones
+Overall accuracy: 0.16707175925925927
+Overall error: 6.210632658932069
+Overall accuracy std: 0.001359953703703698
+Overall error std: 3.340109046903052
+Took 1539.024011850357 to complete evaluation
+
+
+48# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 16
+> Velocity: (0.05, 0.05)
+
+Took 0.04695296287536621 to generate all
+Took 0.0007691383361816406 to create build distribution matrix
+Took 0.2928128242492676 to create recover traces from aggregated data
+Took 0.26206493377685547 to map traces recovered traces to real ones
+Overall accuracy: 0.4994791666666666
+Overall error: 5.438796510162097
+Overall accuracy std: 0.019791666666666676
+Overall error std: 2.6354305077611615
+Took 0.6104788780212402 to complete evaluation
+
+
+49# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 64
+> Velocity: (0.05, 0.05)
+
+Took 0.06922483444213867 to generate all
+Took 0.0020089149475097656 to create build distribution matrix
+Took 0.24730181694030762 to create recover traces from aggregated data
+Took 0.38500094413757324 to map traces recovered traces to real ones
+Overall accuracy: 0.4010416666666667
+Overall error: 5.548408313460529
+Overall accuracy std: 0.005208333333333326
+Overall error std: 2.0996447840143215
+Took 0.7083568572998047 to complete evaluation
+
+
+50# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 144
+> Velocity: (0.05, 0.05)
+
+Took 0.10971689224243164 to generate all
+Took 0.044632911682128906 to create build distribution matrix
+Took 0.26686596870422363 to create recover traces from aggregated data
+Took 0.33505821228027344 to map traces recovered traces to real ones
+Overall accuracy: 0.5098958333333333
+Overall error: 3.039169322062993
+Overall accuracy std: 0.021875000000000002
+Overall error std: 2.2781301446243143
+Took 0.7645180225372314 to complete evaluation
+
+
+51# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 256
+> Velocity: (0.05, 0.05)
+
+Took 0.14074397087097168 to generate all
+Took 0.04300403594970703 to create build distribution matrix
+Took 0.1951460838317871 to create recover traces from aggregated data
+Took 0.31272220611572266 to map traces recovered traces to real ones
+Overall accuracy: 0.7083333333333333
+Overall error: 1.397272191830864
+Overall accuracy std: 0.0
+Overall error std: 1.1155692348405637
+Took 0.7408590316772461 to complete evaluation
+
+
+52# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 400
+> Velocity: (0.05, 0.05)
+
+Took 0.16250085830688477 to generate all
+Took 0.04465007781982422 to create build distribution matrix
+Took 0.24826598167419434 to create recover traces from aggregated data
+Took 0.5539760589599609 to map traces recovered traces to real ones
+Overall accuracy: 0.8
+Overall error: 0.9354917566423193
+Overall accuracy std: 0.001041666666666652
+Overall error std: 1.3610207256974993
+Took 1.0626869201660156 to complete evaluation
+
+
+53# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 576
+> Velocity: (0.05, 0.05)
+
+Took 0.1357121467590332 to generate all
+Took 0.05450081825256348 to create build distribution matrix
+Took 0.2290959358215332 to create recover traces from aggregated data
+Took 0.6979038715362549 to map traces recovered traces to real ones
+Overall accuracy: 0.8697916666666666
+Overall error: 0.43054846355677634
+Overall accuracy std: 0.0
+Overall error std: 0.5682493119556284
+Took 1.2332561016082764 to complete evaluation
+
+
+54# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 784
+> Velocity: (0.05, 0.05)
+
+Took 0.23546481132507324 to generate all
+Took 0.10491609573364258 to create build distribution matrix
+Took 0.24243927001953125 to create recover traces from aggregated data
+Took 1.0562310218811035 to map traces recovered traces to real ones
+Overall accuracy: 0.84375
+Overall error: 0.6860508758210806
+Overall accuracy std: 0.0
+Overall error std: 0.8751390912835209
+Took 1.838578224182129 to complete evaluation
+
+
+55# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 1024
+> Velocity: (0.05, 0.05)
+
+Took 0.3239927291870117 to generate all
+Took 0.14775395393371582 to create build distribution matrix
+Took 0.2733609676361084 to create recover traces from aggregated data
+Took 1.5593459606170654 to map traces recovered traces to real ones
+Overall accuracy: 0.9427083333333334
+Overall error: 0.20703049410422675
+Overall accuracy std: 0.0
+Overall error std: 0.5030566149062108
+Took 2.5651650428771973 to complete evaluation
+
+
+56# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 16
+> Velocity: (0.05, 0.05)
+
+Took 0.08820605278015137 to generate all
+Took 0.04104280471801758 to create build distribution matrix
+Took 2.762990951538086 to create recover traces from aggregated data
+Took 3.0335590839385986 to map traces recovered traces to real ones
+Overall accuracy: 0.3859375
+Overall error: 6.584026997231982
+Overall accuracy std: 0.0054687500000000005
+Overall error std: 2.6696380488470504
+Took 5.934689044952393 to complete evaluation
+
+
+57# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 64
+> Velocity: (0.05, 0.05)
+
+Took 0.10805296897888184 to generate all
+Took 0.0019309520721435547 to create build distribution matrix
+Took 2.99161696434021 to create recover traces from aggregated data
+Took 2.4553210735321045 to map traces recovered traces to real ones
+Overall accuracy: 0.22213541666666664
+Overall error: 7.312276667873516
+Overall accuracy std: 0.00625
+Overall error std: 2.569020252705844
+Took 5.595523118972778 to complete evaluation
+
+
+58# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 144
+> Velocity: (0.05, 0.05)
+
+Took 0.07302975654602051 to generate all
+Took 0.004183053970336914 to create build distribution matrix
+Took 3.5467309951782227 to create recover traces from aggregated data
+Took 2.4829020500183105 to map traces recovered traces to real ones
+Overall accuracy: 0.19791666666666666
+Overall error: 7.707018475419477
+Overall accuracy std: 0.0013020833333333259
+Overall error std: 3.2045960765000507
+Took 6.156199932098389 to complete evaluation
+
+
+59# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 256
+> Velocity: (0.05, 0.05)
+
+Took 0.11602115631103516 to generate all
+Took 0.04636096954345703 to create build distribution matrix
+Took 2.671912908554077 to create recover traces from aggregated data
+Took 2.3683011531829834 to map traces recovered traces to real ones
+Overall accuracy: 0.21067708333333335
+Overall error: 6.646594256137581
+Overall accuracy std: 0.005989583333333325
+Overall error std: 2.7290887522962475
+Took 5.253002882003784 to complete evaluation
+
+
+60# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 400
+> Velocity: (0.05, 0.05)
+
+Took 0.12790894508361816 to generate all
+Took 0.03858304023742676 to create build distribution matrix
+Took 2.408665895462036 to create recover traces from aggregated data
+Took 4.111479997634888 to map traces recovered traces to real ones
+Overall accuracy: 0.43098958333333337
+Overall error: 3.5763045311400887
+Overall accuracy std: 0.007812500000000023
+Overall error std: 3.045312104862977
+Took 6.774243116378784 to complete evaluation
+
+
+61# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 576
+> Velocity: (0.05, 0.05)
+
+Took 0.27313995361328125 to generate all
+Took 0.09380006790161133 to create build distribution matrix
+Took 2.1857919692993164 to create recover traces from aggregated data
+Took 4.173668146133423 to map traces recovered traces to real ones
+Overall accuracy: 0.528125
+Overall error: 2.5282582525756014
+Overall accuracy std: 0.004947916666666652
+Overall error std: 2.4659288893893554
+Took 6.846175193786621 to complete evaluation
+
+
+62# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 784
+> Velocity: (0.05, 0.05)
+
+Took 0.39815306663513184 to generate all
+Took 0.09477710723876953 to create build distribution matrix
+Took 1.7307939529418945 to create recover traces from aggregated data
+Took 4.908660173416138 to map traces recovered traces to real ones
+Overall accuracy: 0.5055989583333333
+Overall error: 2.876236463674317
+Overall accuracy std: 0.013802083333333303
+Overall error std: 2.4151235423790016
+Took 7.280641078948975 to complete evaluation
+
+
+63# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 1024
+> Velocity: (0.05, 0.05)
+
+Took 0.5225107669830322 to generate all
+Took 0.10557103157043457 to create build distribution matrix
+Took 1.6851370334625244 to create recover traces from aggregated data
+Took 5.083333969116211 to map traces recovered traces to real ones
+Overall accuracy: 0.4983072916666667
+Overall error: 3.194249238528265
+Overall accuracy std: 0.0070312500000000435
+Overall error std: 2.599365401971633
+Took 7.693835973739624 to complete evaluation
+
+
+64# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 16
+> Velocity: (0.05, 0.05)
+
+Took 0.37274694442749023 to generate all
+Took 0.0013349056243896484 to create build distribution matrix
+Took 11.136895179748535 to create recover traces from aggregated data
+Took 11.127698183059692 to map traces recovered traces to real ones
+Overall accuracy: 0.43148148148148147
+Overall error: 6.030799200585241
+Overall accuracy std: 0.0006944444444444199
+Overall error std: 2.7282662140461587
+Took 22.658540964126587 to complete evaluation
+
+
+65# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 64
+> Velocity: (0.05, 0.05)
+
+Took 0.27955198287963867 to generate all
+Took 0.0027179718017578125 to create build distribution matrix
+Took 18.909748792648315 to create recover traces from aggregated data
+Took 12.10883617401123 to map traces recovered traces to real ones
+Overall accuracy: 0.19693287037037038
+Overall error: 7.602532068265086
+Overall accuracy std: 0.0015046296296296392
+Overall error std: 2.5154430378098587
+Took 31.3211030960083 to complete evaluation
+
+
+66# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 144
+> Velocity: (0.05, 0.05)
+
+Took 0.21717619895935059 to generate all
+Took 0.0040531158447265625 to create build distribution matrix
+Took 20.195037126541138 to create recover traces from aggregated data
+Took 11.299482107162476 to map traces recovered traces to real ones
+Overall accuracy: 0.1534722222222222
+Overall error: 7.771695193255721
+Overall accuracy std: 0.00023148148148148805
+Overall error std: 2.67297798764504
+Took 31.75800395011902 to complete evaluation
+
+
+67# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 256
+> Velocity: (0.05, 0.05)
+
+Took 0.37409520149230957 to generate all
+Took 0.006381034851074219 to create build distribution matrix
+Took 13.62623119354248 to create recover traces from aggregated data
+Took 11.880691051483154 to map traces recovered traces to real ones
+Overall accuracy: 0.15578703703703706
+Overall error: 7.795699536278959
+Overall accuracy std: 0.002083333333333337
+Overall error std: 2.9339203203857496
+Took 25.936903715133667 to complete evaluation
+
+
+68# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 400
+> Velocity: (0.05, 0.05)
+
+Took 0.30940890312194824 to generate all
+Took 0.04755425453186035 to create build distribution matrix
+Took 18.530397176742554 to create recover traces from aggregated data
+Took 22.584022998809814 to map traces recovered traces to real ones
+Overall accuracy: 0.1799189814814815
+Overall error: 7.664345794548984
+Overall accuracy std: 0.0016203703703703718
+Overall error std: 3.2897360981983432
+Took 41.52717208862305 to complete evaluation
+
+
+69# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 576
+> Velocity: (0.05, 0.05)
+
+Took 0.6597957611083984 to generate all
+Took 0.04869365692138672 to create build distribution matrix
+Took 18.194106101989746 to create recover traces from aggregated data
+Took 20.18114185333252 to map traces recovered traces to real ones
+Overall accuracy: 0.22158564814814818
+Overall error: 6.651626096023731
+Overall accuracy std: 0.002777777777777779
+Overall error std: 3.3389160190963274
+Took 39.23220992088318 to complete evaluation
+
+
+70# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 784
+> Velocity: (0.05, 0.05)
+
+Took 0.5286440849304199 to generate all
+Took 0.05666494369506836 to create build distribution matrix
+Took 20.184990167617798 to create recover traces from aggregated data
+Took 19.65351700782776 to map traces recovered traces to real ones
+Overall accuracy: 0.21712962962962962
+Overall error: 6.671350938404825
+Overall accuracy std: 0.001967592592592582
+Overall error std: 3.0849551271812587
+Took 40.55673408508301 to complete evaluation
+
+
+71# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 1024
+> Velocity: (0.05, 0.05)
+
+Took 0.810554027557373 to generate all
+Took 0.1090400218963623 to create build distribution matrix
+Took 16.234626054763794 to create recover traces from aggregated data
+Took 24.412398099899292 to map traces recovered traces to real ones
+Overall accuracy: 0.22453703703703703
+Overall error: 6.381227811278715
+Overall accuracy std: 0.0069444444444444415
+Overall error std: 3.55138447766963
+Took 41.77485227584839 to complete evaluation
+
+
+72# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 16
+> Velocity: (0.05, 0.05)
+
+Took 0.705833911895752 to generate all
+Took 0.0017161369323730469 to create build distribution matrix
+Took 44.213815212249756 to create recover traces from aggregated data
+Took 36.14840078353882 to map traces recovered traces to real ones
+Overall accuracy: 0.4416015625
+Overall error: 5.30781540206449
+Overall accuracy std: 0.000390625
+Overall error std: 2.2526814089576663
+Took 81.10444283485413 to complete evaluation
+
+
+73# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 64
+> Velocity: (0.05, 0.05)
+
+Took 0.5460619926452637 to generate all
+Took 0.0030739307403564453 to create build distribution matrix
+Took 77.78227710723877 to create recover traces from aggregated data
+Took 32.89494585990906 to map traces recovered traces to real ones
+Overall accuracy: 0.19964192708333334
+Overall error: 7.758697504656126
+Overall accuracy std: 0.00013020833333333702
+Overall error std: 2.7923025395668737
+Took 111.26571416854858 to complete evaluation
+
+
+74# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 144
+> Velocity: (0.05, 0.05)
+
+Took 0.918165922164917 to generate all
+Took 0.04484200477600098 to create build distribution matrix
+Took 163.00343799591064 to create recover traces from aggregated data
+Took 93.10781788825989 to map traces recovered traces to real ones
+Overall accuracy: 0.14511718749999997
+Overall error: 7.967139679663148
+Overall accuracy std: 0.00013020833333332593
+Overall error std: 2.5593006565747087
+Took 257.17249512672424 to complete evaluation
+
+
+75# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 256
+> Velocity: (0.05, 0.05)
+
+Took 2.8973331451416016 to generate all
+Took 0.007649898529052734 to create build distribution matrix
+Took 204.45592188835144 to create recover traces from aggregated data
+Took 59.98083519935608 to map traces recovered traces to real ones
+Overall accuracy: 0.13313802083333334
+Overall error: 8.125752910282564
+Overall accuracy std: 0.0013020833333333259
+Overall error std: 2.648948825655419
+Took 267.50531005859375 to complete evaluation
+
+
+76# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 400
+> Velocity: (0.05, 0.05)
+
+Took 1.5775458812713623 to generate all
+Took 0.07027888298034668 to create build distribution matrix
+Took 110.19064593315125 to create recover traces from aggregated data
+Took 98.44499135017395 to map traces recovered traces to real ones
+Overall accuracy: 0.144921875
+Overall error: 7.7137780986832265
+Overall accuracy std: 0.0014973958333333482
+Overall error std: 2.9386164682574987
+Took 210.37698197364807 to complete evaluation
+
+
+77# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 576
+> Velocity: (0.05, 0.05)
+
+Took 1.646306037902832 to generate all
+Took 0.11124300956726074 to create build distribution matrix
+Took 120.81242299079895 to create recover traces from aggregated data
+Took 101.05851221084595 to map traces recovered traces to real ones
+Overall accuracy: 0.14781901041666667
+Overall error: 7.092312591222706
+Overall accuracy std: 0.0025390625
+Overall error std: 3.114602448297232
+Took 223.76397800445557 to complete evaluation
+
+
+78# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 784
+> Velocity: (0.05, 0.05)
+
+Took 2.1208410263061523 to generate all
+Took 0.13164377212524414 to create build distribution matrix
+Took 127.7933840751648 to create recover traces from aggregated data
+Took 96.71055674552917 to map traces recovered traces to real ones
+Overall accuracy: 0.1477213541666667
+Overall error: 7.302228822001477
+Overall accuracy std: 0.003125
+Overall error std: 3.13916916604522
+Took 226.98029375076294 to complete evaluation
+
+
+79# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 1024
+> Velocity: (0.05, 0.05)
+
+Took 1.6692259311676025 to generate all
+Took 0.1189119815826416 to create build distribution matrix
+Took 105.58201909065247 to create recover traces from aggregated data
+Took 78.82072687149048 to map traces recovered traces to real ones
+Overall accuracy: 0.1513020833333333
+Overall error: 7.2611248396325765
+Overall accuracy std: 0.0001953125000000111
+Overall error std: 3.0300865739607485
+Took 186.49810910224915 to complete evaluation
+
+
+80# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 16
+> Velocity: (0.05, 0.05)
+
+Took 1.8633170127868652 to generate all
+Took 0.002251863479614258 to create build distribution matrix
+Took 200.1662049293518 to create recover traces from aggregated data
+Took 118.59420228004456 to map traces recovered traces to real ones
+Overall accuracy: 0.43968750000000006
+Overall error: 5.222654882609734
+Overall accuracy std: 0.0002083333333333437
+Overall error std: 2.1509151495664134
+Took 320.8148241043091 to complete evaluation
+
+
+81# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 64
+> Velocity: (0.05, 0.05)
+
+Took 1.6275310516357422 to generate all
+Took 0.003324747085571289 to create build distribution matrix
+Took 372.5904667377472 to create recover traces from aggregated data
+Took 132.84418320655823 to map traces recovered traces to real ones
+Overall accuracy: 0.20220833333333332
+Overall error: 7.3424409020939185
+Overall accuracy std: 0.0010833333333333472
+Overall error std: 2.497831105394444
+Took 507.236389875412 to complete evaluation
+
+
+82# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 144
+> Velocity: (0.05, 0.05)
+
+Took 1.6308538913726807 to generate all
+Took 0.005526065826416016 to create build distribution matrix
+Took 390.3721249103546 to create recover traces from aggregated data
+Took 128.10034680366516 to map traces recovered traces to real ones
+Overall accuracy: 0.14387499999999998
+Overall error: 7.8807014567807725
+Overall accuracy std: 0.00025000000000000575
+Overall error std: 2.6251541776152894
+Took 520.70947098732 to complete evaluation
+
+
+83# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 256
+> Velocity: (0.05, 0.05)
+
+Took 3.655503273010254 to generate all
+Took 0.10776305198669434 to create build distribution matrix
+Took 337.18260526657104 to create recover traces from aggregated data
+Took 156.77299618721008 to map traces recovered traces to real ones
+Overall accuracy: 0.13297916666666665
+Overall error: 7.689785295939876
+Overall accuracy std: 0.0005416666666666736
+Overall error std: 2.762057651390431
+Took 498.21462774276733 to complete evaluation
+
+
+84# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 400
+> Velocity: (0.05, 0.05)
+
+Took 3.119560956954956 to generate all
+Took 0.1574878692626953 to create build distribution matrix
+Took 316.9268548488617 to create recover traces from aggregated data
+Took 280.60756516456604 to map traces recovered traces to real ones
+Overall accuracy: 0.13556249999999997
+Overall error: 7.504116299444411
+Overall accuracy std: 0.000333333333333341
+Overall error std: 2.888103011398091
+Took 601.0249509811401 to complete evaluation
+
+
+85# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 576
+> Velocity: (0.05, 0.05)
+
+Took 2.2286410331726074 to generate all
+Took 0.06477618217468262 to create build distribution matrix
+Took 318.47142815589905 to create recover traces from aggregated data
+Took 273.08634209632874 to map traces recovered traces to real ones
+Overall accuracy: 0.12743750000000004
+Overall error: 7.5559016286874465
+Overall accuracy std: 0.0021666666666666614
+Overall error std: 3.109037007941254
+Took 594.1427309513092 to complete evaluation
+
+
+86# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 784
+> Velocity: (0.05, 0.05)
+
+Took 1.8646671772003174 to generate all
+Took 0.0810251235961914 to create build distribution matrix
+Took 311.89761209487915 to create recover traces from aggregated data
+Took 323.8529648780823 to map traces recovered traces to real ones
+Overall accuracy: 0.13218749999999999
+Overall error: 7.329790911918034
+Overall accuracy std: 0.001041666666666663
+Overall error std: 3.014275009184477
+Took 637.930988073349 to complete evaluation
+
+
+87# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 1024
+> Velocity: (0.05, 0.05)
+
+Took 2.256826877593994 to generate all
+Took 0.12501287460327148 to create build distribution matrix
+Took 254.31769013404846 to create recover traces from aggregated data
+Took 309.68456077575684 to map traces recovered traces to real ones
+Overall accuracy: 0.12462499999999999
+Overall error: 7.273623394517844
+Overall accuracy std: 0.00012500000000000288
+Overall error std: 3.281910567339445
+Took 566.9675171375275 to complete evaluation
+
+
+88# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 16
+> Velocity: (0.05, 0.05)
+
+Took 3.2971348762512207 to generate all
+Took 0.10596108436584473 to create build distribution matrix
+Took 497.6377148628235 to create recover traces from aggregated data
+Took 304.7316961288452 to map traces recovered traces to real ones
+Overall accuracy: 0.45834780092592603
+Overall error: 4.90304175660672
+Overall accuracy std: 0.0005497685185185342
+Overall error std: 1.944192057062016
+Took 806.4552712440491 to complete evaluation
+
+
+89# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 64
+> Velocity: (0.05, 0.05)
+
+Took 1.8421282768249512 to generate all
+Took 0.038794755935668945 to create build distribution matrix
+Took 1104.196594953537 to create recover traces from aggregated data
+Took 288.2874290943146 to map traces recovered traces to real ones
+Overall accuracy: 0.21922743055555555
+Overall error: 6.8246871580055695
+Overall accuracy std: 0.000491898148148151
+Overall error std: 2.5178959333631385
+Took 1394.8594641685486 to complete evaluation
+
+
+90# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 144
+> Velocity: (0.05, 0.05)
+
+Took 1.964944839477539 to generate all
+Took 0.006159782409667969 to create build distribution matrix
+Took 1116.5881793498993 to create recover traces from aggregated data
+Took 272.36373496055603 to map traces recovered traces to real ones
+Overall accuracy: 0.15086805555555555
+Overall error: 7.491295226466816
+Overall accuracy std: 0.0009259259259259079
+Overall error std: 2.6758612361192267
+Took 1391.373915195465 to complete evaluation
+
+
+91# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 256
+> Velocity: (0.05, 0.05)
+
+Took 2.009485960006714 to generate all
+Took 0.04265904426574707 to create build distribution matrix
+Took 1291.4006750583649 to create recover traces from aggregated data
+Took 250.25662899017334 to map traces recovered traces to real ones
+Overall accuracy: 0.12942708333333336
+Overall error: 7.669389943523689
+Overall accuracy std: 0.0007523148148148029
+Overall error std: 2.8458100315017894
+Took 1544.4389729499817 to complete evaluation
+
+
+92# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 400
+> Velocity: (0.05, 0.05)
+
+Took 3.480010986328125 to generate all
+Took 0.06684589385986328 to create build distribution matrix
+Took 1201.8026819229126 to create recover traces from aggregated data
+Took 578.0517392158508 to map traces recovered traces to real ones
+Overall accuracy: 0.1346064814814815
+Overall error: 7.50909018996398
+Overall accuracy std: 0.001186342592592604
+Overall error std: 3.0468763760951947
+Took 1784.1411340236664 to complete evaluation
+
+
+93# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 576
+> Velocity: (0.05, 0.05)
+
+Took 3.024477958679199 to generate all
+Took 0.09622502326965332 to create build distribution matrix
+Took 1200.058670759201 to create recover traces from aggregated data
+Took 656.2511849403381 to map traces recovered traces to real ones
+Overall accuracy: 0.12348090277777775
+Overall error: 7.2630945940944835
+Overall accuracy std: 0.0002893518518518545
+Overall error std: 3.132872106688345
+Took 1860.5554468631744 to complete evaluation
+
+
+94# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 784
+> Velocity: (0.05, 0.05)
+
+Took 4.217941999435425 to generate all
+Took 0.14203095436096191 to create build distribution matrix
+Took 1158.1673471927643 to create recover traces from aggregated data
+Took 652.8237218856812 to map traces recovered traces to real ones
+Overall accuracy: 0.1136574074074074
+Overall error: 7.328859547279024
+Overall accuracy std: 0.000462962962962965
+Overall error std: 3.056913885338457
+Took 1818.6229140758514 to complete evaluation
+
+
+95# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 1024
+> Velocity: (0.05, 0.05)
+
+Took 7.644435167312622 to generate all
+Took 0.3300950527191162 to create build distribution matrix
+Took 1120.0607500076294 to create recover traces from aggregated data
+Took 438.1255078315735 to map traces recovered traces to real ones
+Overall accuracy: 0.11072048611111111
+Overall error: 7.362587779242083
+Overall accuracy std: 0.0013599537037037091
+Overall error std: 3.0644437562059106
+Took 1567.2549781799316 to complete evaluation
+
+
+96# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 16
+> Velocity: (0.1, 0.1)
+
+Took 0.10771608352661133 to generate all
+Took 0.0007650852203369141 to create build distribution matrix
+Took 0.3902161121368408 to create recover traces from aggregated data
+Took 0.377211332321167 to map traces recovered traces to real ones
+Overall accuracy: 0.3026041666666667
+Overall error: 7.909602636977775
+Overall accuracy std: 0.016666666666666653
+Overall error std: 2.456940299924063
+Took 0.881882905960083 to complete evaluation
+
+
+97# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 64
+> Velocity: (0.1, 0.1)
+
+Took 0.10765600204467773 to generate all
+Took 0.0018448829650878906 to create build distribution matrix
+Took 0.34290003776550293 to create recover traces from aggregated data
+Took 0.3430671691894531 to map traces recovered traces to real ones
+Overall accuracy: 0.3416666666666667
+Overall error: 5.439194466451798
+Overall accuracy std: 0.016666666666666673
+Overall error std: 2.4668365366271545
+Took 0.8049390316009521 to complete evaluation
+
+
+98# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 144
+> Velocity: (0.1, 0.1)
+
+Took 0.10933303833007812 to generate all
+Took 0.0038089752197265625 to create build distribution matrix
+Took 0.31382012367248535 to create recover traces from aggregated data
+Took 0.36120080947875977 to map traces recovered traces to real ones
+Overall accuracy: 0.640625
+Overall error: 1.8606407230976174
+Overall accuracy std: 0.0
+Overall error std: 1.058106684705727
+Took 0.8373501300811768 to complete evaluation
+
+
+99# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 256
+> Velocity: (0.1, 0.1)
+
+Took 0.15875983238220215 to generate all
+Took 0.0599370002746582 to create build distribution matrix
+Took 0.2845442295074463 to create recover traces from aggregated data
+Took 0.3557291030883789 to map traces recovered traces to real ones
+Overall accuracy: 0.5265625
+Overall error: 4.301626654012781
+Overall accuracy std: 0.025
+Overall error std: 2.7301473786022115
+Took 0.8720669746398926 to complete evaluation
+
+
+100# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 400
+> Velocity: (0.1, 0.1)
+
+Took 0.20456600189208984 to generate all
+Took 0.051767587661743164 to create build distribution matrix
+Took 0.26771998405456543 to create recover traces from aggregated data
+Took 0.6790950298309326 to map traces recovered traces to real ones
+Overall accuracy: 0.6588541666666667
+Overall error: 3.027795857184681
+Overall accuracy std: 0.0
+Overall error std: 3.3983042006580693
+Took 1.3068161010742188 to complete evaluation
+
+
+101# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 576
+> Velocity: (0.1, 0.1)
+
+Took 0.1468360424041748 to generate all
+Took 0.05478811264038086 to create build distribution matrix
+Took 0.2858848571777344 to create recover traces from aggregated data
+Took 0.6808500289916992 to map traces recovered traces to real ones
+Overall accuracy: 0.796875
+Overall error: 1.642632342733495
+Overall accuracy std: 0.0
+Overall error std: 2.243455365113227
+Took 1.2778198719024658 to complete evaluation
+
+
+102# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 784
+> Velocity: (0.1, 0.1)
+
+Took 0.3135559558868408 to generate all
+Took 0.11868906021118164 to create build distribution matrix
+Took 0.25186991691589355 to create recover traces from aggregated data
+Took 1.306495189666748 to map traces recovered traces to real ones
+Overall accuracy: 0.7098958333333333
+Overall error: 1.9718550795880527
+Overall accuracy std: 0.003124999999999989
+Overall error std: 2.2134906561214014
+Took 2.237139940261841 to complete evaluation
+
+
+103# Evaluating trace simulator with parameters:
+> Users: 16
+> Towers: 1024
+> Velocity: (0.1, 0.1)
+
+Took 0.38111400604248047 to generate all
+Took 0.17156004905700684 to create build distribution matrix
+Took 0.32001209259033203 to create recover traces from aggregated data
+Took 1.353545904159546 to map traces recovered traces to real ones
+Overall accuracy: 0.7354166666666667
+Overall error: 1.4566097856398226
+Overall accuracy std: 0.007291666666666652
+Overall error std: 1.6228167184733413
+Took 2.488784074783325 to complete evaluation
+
+
+104# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 16
+> Velocity: (0.1, 0.1)
+
+Took 0.12364888191223145 to generate all
+Took 0.0010082721710205078 to create build distribution matrix
+Took 3.6710519790649414 to create recover traces from aggregated data
+Took 3.179368019104004 to map traces recovered traces to real ones
+Overall accuracy: 0.29205729166666666
+Overall error: 7.44131699242691
+Overall accuracy std: 0.0046875
+Overall error std: 2.129511855583695
+Took 6.983052968978882 to complete evaluation
+
+
+105# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 64
+> Velocity: (0.1, 0.1)
+
+Took 0.12663984298706055 to generate all
+Took 0.0021979808807373047 to create build distribution matrix
+Took 3.6499361991882324 to create recover traces from aggregated data
+Took 2.7939281463623047 to map traces recovered traces to real ones
+Overall accuracy: 0.176171875
+Overall error: 8.40310172573037
+Overall accuracy std: 0.004687500000000001
+Overall error std: 2.4169745631406863
+Took 6.5814290046691895 to complete evaluation
+
+
+106# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 144
+> Velocity: (0.1, 0.1)
+
+Took 0.1173551082611084 to generate all
+Took 0.003906965255737305 to create build distribution matrix
+Took 4.079807996749878 to create recover traces from aggregated data
+Took 2.7314319610595703 to map traces recovered traces to real ones
+Overall accuracy: 0.18372395833333335
+Overall error: 8.335037547726781
+Overall accuracy std: 0.000260416666666663
+Overall error std: 2.531227648902915
+Took 6.98512601852417 to complete evaluation
+
+
+107# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 256
+> Velocity: (0.1, 0.1)
+
+Took 0.11030197143554688 to generate all
+Took 0.04596686363220215 to create build distribution matrix
+Took 3.014219045639038 to create recover traces from aggregated data
+Took 2.6865761280059814 to map traces recovered traces to real ones
+Overall accuracy: 0.17526041666666667
+Overall error: 7.865433448192947
+Overall accuracy std: 0.003645833333333337
+Overall error std: 2.613026633322953
+Took 5.91087007522583 to complete evaluation
+
+
+108# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 400
+> Velocity: (0.1, 0.1)
+
+Took 0.16786789894104004 to generate all
+Took 0.011232852935791016 to create build distribution matrix
+Took 3.8660953044891357 to create recover traces from aggregated data
+Took 4.696249961853027 to map traces recovered traces to real ones
+Overall accuracy: 0.19440104166666666
+Overall error: 8.033154769908379
+Overall accuracy std: 0.0072916666666666624
+Overall error std: 2.5085436093411078
+Took 8.798021793365479 to complete evaluation
+
+
+109# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 576
+> Velocity: (0.1, 0.1)
+
+Took 0.2634408473968506 to generate all
+Took 0.12437915802001953 to create build distribution matrix
+Took 3.7843017578125 to create recover traces from aggregated data
+Took 4.960525989532471 to map traces recovered traces to real ones
+Overall accuracy: 0.20833333333333331
+Overall error: 7.678889482787906
+Overall accuracy std: 0.001302083333333337
+Overall error std: 2.8389393603902073
+Took 9.19969916343689 to complete evaluation
+
+
+110# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 784
+> Velocity: (0.1, 0.1)
+
+Took 0.46144914627075195 to generate all
+Took 0.09454917907714844 to create build distribution matrix
+Took 4.738368988037109 to create recover traces from aggregated data
+Took 6.524590015411377 to map traces recovered traces to real ones
+Overall accuracy: 0.2315104166666667
+Overall error: 7.033902817287166
+Overall accuracy std: 0.005989583333333326
+Overall error std: 2.6301303270507583
+Took 11.998073816299438 to complete evaluation
+
+
+111# Evaluating trace simulator with parameters:
+> Users: 64
+> Towers: 1024
+> Velocity: (0.1, 0.1)
+
+Took 0.6791369915008545 to generate all
+Took 0.1887528896331787 to create build distribution matrix
+Took 4.448591947555542 to create recover traces from aggregated data
+Took 6.160941123962402 to map traces recovered traces to real ones
+Overall accuracy: 0.24179687500000005
+Overall error: 7.783748655460149
+Overall accuracy std: 0.001822916666666652
+Overall error std: 3.373817833008874
+Took 11.785760164260864 to complete evaluation
+
+
+112# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 16
+> Velocity: (0.1, 0.1)
+
+Took 0.3910410404205322 to generate all
+Took 0.001363992691040039 to create build distribution matrix
+Took 19.387138843536377 to create recover traces from aggregated data
+Took 16.811511993408203 to map traces recovered traces to real ones
+Overall accuracy: 0.3227430555555556
+Overall error: 6.956559759162022
+Overall accuracy std: 0.0003472222222222321
+Overall error std: 2.0474812994735543
+Took 36.60970401763916 to complete evaluation
+
+
+113# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 64
+> Velocity: (0.1, 0.1)
+
+Took 0.5919442176818848 to generate all
+Took 0.002637147903442383 to create build distribution matrix
+Took 32.46402311325073 to create recover traces from aggregated data
+Took 19.380621671676636 to map traces recovered traces to real ones
+Overall accuracy: 0.1677662037037037
+Overall error: 8.13169068153144
+Overall accuracy std: 0.0004629629629629761
+Overall error std: 2.1878565003875137
+Took 52.51629114151001 to complete evaluation
+
+
+114# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 144
+> Velocity: (0.1, 0.1)
+
+Took 0.7591888904571533 to generate all
+Took 0.07973313331604004 to create build distribution matrix
+Took 34.79215383529663 to create recover traces from aggregated data
+Took 22.20971918106079 to map traces recovered traces to real ones
+Overall accuracy: 0.16111111111111112
+Overall error: 7.847966545169237
+Overall accuracy std: 0.0016203703703703608
+Overall error std: 2.4650009198307026
+Took 57.86219906806946 to complete evaluation
+
+
+115# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 256
+> Velocity: (0.1, 0.1)
+
+Took 1.2580089569091797 to generate all
+Took 0.007196903228759766 to create build distribution matrix
+Took 41.722087144851685 to create recover traces from aggregated data
+Took 32.31424307823181 to map traces recovered traces to real ones
+Overall accuracy: 0.1417824074074074
+Overall error: 7.911881713834796
+Overall accuracy std: 0.0005787037037037091
+Overall error std: 2.5057840218021616
+Took 75.41121101379395 to complete evaluation
+
+
+116# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 400
+> Velocity: (0.1, 0.1)
+
+Took 1.6957948207855225 to generate all
+Took 0.11967897415161133 to create build distribution matrix
+Took 51.79123091697693 to create recover traces from aggregated data
+Took 46.36290216445923 to map traces recovered traces to real ones
+Overall accuracy: 0.13171296296296298
+Overall error: 8.418840496801847
+Overall accuracy std: 0.0016203703703703718
+Overall error std: 2.702169718552393
+Took 100.11242699623108 to complete evaluation
+
+
+117# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 576
+> Velocity: (0.1, 0.1)
+
+Took 1.6692039966583252 to generate all
+Took 0.268280029296875 to create build distribution matrix
+Took 47.88581085205078 to create recover traces from aggregated data
+Took 43.02586221694946 to map traces recovered traces to real ones
+Overall accuracy: 0.13217592592592592
+Overall error: 8.272579974671299
+Overall accuracy std: 0.001273148148148151
+Overall error std: 2.765375894371987
+Took 92.99026584625244 to complete evaluation
+
+
+118# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 784
+> Velocity: (0.1, 0.1)
+
+Took 1.8406462669372559 to generate all
+Took 0.20891022682189941 to create build distribution matrix
+Took 46.73278999328613 to create recover traces from aggregated data
+Took 43.20006704330444 to map traces recovered traces to real ones
+Overall accuracy: 0.1316550925925926
+Overall error: 8.59144358592917
+Overall accuracy std: 0.0005787037037037091
+Overall error std: 2.719604745963503
+Took 92.31208491325378 to complete evaluation
+
+
+119# Evaluating trace simulator with parameters:
+> Users: 144
+> Towers: 1024
+> Velocity: (0.1, 0.1)
+
+Took 1.9287238121032715 to generate all
+Took 0.24627184867858887 to create build distribution matrix
+Took 32.10504603385925 to create recover traces from aggregated data
+Took 30.477139234542847 to map traces recovered traces to real ones
+Overall accuracy: 0.125
+Overall error: 8.424659577963478
+Overall accuracy std: 0.0028935185185185175
+Overall error std: 2.8870835533394508
+Took 65.19369125366211 to complete evaluation
+
+
+120# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 16
+> Velocity: (0.1, 0.1)
+
+Took 1.283017873764038 to generate all
+Took 0.0018150806427001953 to create build distribution matrix
+Took 82.07742309570312 to create recover traces from aggregated data
+Took 51.751673221588135 to map traces recovered traces to real ones
+Overall accuracy: 0.3369466145833334
+Overall error: 6.610456537126805
+Overall accuracy std: 0.0015625000000000222
+Overall error std: 1.980608035079642
+Took 135.21831011772156 to complete evaluation
+
+
+121# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 64
+> Velocity: (0.1, 0.1)
+
+Took 1.0204319953918457 to generate all
+Took 0.05005478858947754 to create build distribution matrix
+Took 93.81837391853333 to create recover traces from aggregated data
+Took 38.749969244003296 to map traces recovered traces to real ones
+Overall accuracy: 0.17171223958333331
+Overall error: 8.087185354960853
+Overall accuracy std: 0.0
+Overall error std: 2.305210711975359
+Took 133.67291378974915 to complete evaluation
+
+
+122# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 144
+> Velocity: (0.1, 0.1)
+
+Took 0.9401543140411377 to generate all
+Took 0.04474496841430664 to create build distribution matrix
+Took 81.72798705101013 to create recover traces from aggregated data
+Took 33.62011194229126 to map traces recovered traces to real ones
+Overall accuracy: 0.14033203125
+Overall error: 8.181953732245436
+Overall accuracy std: 0.0005859375
+Overall error std: 2.493984007100947
+Took 116.37116312980652 to complete evaluation
+
+
+123# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 256
+> Velocity: (0.1, 0.1)
+
+Took 0.9201130867004395 to generate all
+Took 0.04198098182678223 to create build distribution matrix
+Took 75.27490210533142 to create recover traces from aggregated data
+Took 31.070547819137573 to map traces recovered traces to real ones
+Overall accuracy: 0.116796875
+Overall error: 8.482409907210506
+Overall accuracy std: 0.0001302083333333315
+Overall error std: 2.791835910190948
+Took 107.34473085403442 to complete evaluation
+
+
+124# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 400
+> Velocity: (0.1, 0.1)
+
+Took 1.012620210647583 to generate all
+Took 0.04629397392272949 to create build distribution matrix
+Took 89.47717809677124 to create recover traces from aggregated data
+Took 52.11376929283142 to map traces recovered traces to real ones
+Overall accuracy: 0.104296875
+Overall error: 8.557515457430787
+Overall accuracy std: 0.001236979166666663
+Overall error std: 2.744292020472385
+Took 142.73436903953552 to complete evaluation
+
+
+125# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 576
+> Velocity: (0.1, 0.1)
+
+Took 0.6226909160614014 to generate all
+Took 0.029191970825195312 to create build distribution matrix
+Took 109.72976517677307 to create recover traces from aggregated data
+Took 52.01193594932556 to map traces recovered traces to real ones
+Overall accuracy: 0.10335286458333333
+Overall error: 8.367728063170519
+Overall accuracy std: 0.0006510416666666629
+Overall error std: 2.65049194353453
+Took 162.5031280517578 to complete evaluation
+
+
+126# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 784
+> Velocity: (0.1, 0.1)
+
+Took 1.2886929512023926 to generate all
+Took 0.11815071105957031 to create build distribution matrix
+Took 105.65861201286316 to create recover traces from aggregated data
+Took 50.48329997062683 to map traces recovered traces to real ones
+Overall accuracy: 0.10387369791666667
+Overall error: 8.368513427988223
+Overall accuracy std: 0.001041666666666663
+Overall error std: 2.982186364885756
+Took 157.71454215049744 to complete evaluation
+
+
+127# Evaluating trace simulator with parameters:
+> Users: 256
+> Towers: 1024
+> Velocity: (0.1, 0.1)
+
+Took 1.49163818359375 to generate all
+Took 0.09511399269104004 to create build distribution matrix
+Took 89.3085069656372 to create recover traces from aggregated data
+Took 59.14272093772888 to map traces recovered traces to real ones
+Overall accuracy: 0.10970052083333333
+Overall error: 8.119313887781566
+Overall accuracy std: 0.002604166666666663
+Overall error std: 2.734706412410997
+Took 150.2818329334259 to complete evaluation
+
+
+128# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 16
+> Velocity: (0.1, 0.1)
+
+Took 1.0678009986877441 to generate all
+Took 0.0023009777069091797 to create build distribution matrix
+Took 184.2185981273651 to create recover traces from aggregated data
+Took 70.70135998725891 to map traces recovered traces to real ones
+Overall accuracy: 0.35143749999999996
+Overall error: 6.147097713392765
+Overall accuracy std: 0.0004583333333333162
+Overall error std: 1.8133713670700826
+Took 256.1069440841675 to complete evaluation
+
+
+129# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 64
+> Velocity: (0.1, 0.1)
+
+Took 1.229964017868042 to generate all
+Took 0.0032498836517333984 to create build distribution matrix
+Took 609.0796439647675 to create recover traces from aggregated data
+Took 116.31843519210815 to map traces recovered traces to real ones
+Overall accuracy: 0.1810416666666667
+Overall error: 7.748085064501707
+Overall accuracy std: 0.0014583333333333395
+Overall error std: 2.1801542891182146
+Took 726.8506660461426 to complete evaluation
+
+
+130# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 144
+> Velocity: (0.1, 0.1)
+
+Took 2.2047810554504395 to generate all
+Took 0.06559586524963379 to create build distribution matrix
+Took 438.9368591308594 to create recover traces from aggregated data
+Took 92.94362688064575 to map traces recovered traces to real ones
+Overall accuracy: 0.14325
+Overall error: 7.868432160464471
+Overall accuracy std: 0.0001666666666666705
+Overall error std: 2.5428144847350374
+Took 534.2563939094543 to complete evaluation
+
+
+131# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 256
+> Velocity: (0.1, 0.1)
+
+Took 1.491668939590454 to generate all
+Took 0.04876112937927246 to create build distribution matrix
+Took 415.8539719581604 to create recover traces from aggregated data
+Took 107.43001985549927 to map traces recovered traces to real ones
+Overall accuracy: 0.11499999999999999
+Overall error: 8.37492773325887
+Overall accuracy std: 0.00041666666666665965
+Overall error std: 2.6470593462597547
+Took 524.9931268692017 to complete evaluation
+
+
+132# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 400
+> Velocity: (0.1, 0.1)
+
+Took 2.239042043685913 to generate all
+Took 0.06410002708435059 to create build distribution matrix
+Took 487.4636700153351 to create recover traces from aggregated data
+Took 220.38891983032227 to map traces recovered traces to real ones
+Overall accuracy: 0.1035625
+Overall error: 8.379474777660024
+Overall accuracy std: 0.00037499999999999757
+Overall error std: 2.7450976199934263
+Took 710.5308122634888 to complete evaluation
+
+
+133# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 576
+> Velocity: (0.1, 0.1)
+
+Took 2.986611843109131 to generate all
+Took 0.08034396171569824 to create build distribution matrix
+Took 426.59187412261963 to create recover traces from aggregated data
+Took 165.17344403266907 to map traces recovered traces to real ones
+Overall accuracy: 0.09356250000000002
+Overall error: 8.62024922555307
+Overall accuracy std: 0.0005833333333333357
+Overall error std: 2.786033235063401
+Took 595.256579875946 to complete evaluation
+
+
+134# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 784
+> Velocity: (0.1, 0.1)
+
+Took 2.498272180557251 to generate all
+Took 0.13329482078552246 to create build distribution matrix
+Took 415.2302758693695 to create recover traces from aggregated data
+Took 166.19069695472717 to map traces recovered traces to real ones
+Overall accuracy: 0.09302083333333333
+Overall error: 8.474151254396633
+Overall accuracy std: 0.0008333333333333305
+Overall error std: 2.769965600447297
+Took 584.3461558818817 to complete evaluation
+
+
+135# Evaluating trace simulator with parameters:
+> Users: 400
+> Towers: 1024
+> Velocity: (0.1, 0.1)
+
+Took 4.171687841415405 to generate all
+Took 0.23693394660949707 to create build distribution matrix
+Took 369.65991401672363 to create recover traces from aggregated data
+Took 163.00290703773499 to map traces recovered traces to real ones
+Overall accuracy: 0.08935416666666667
+Overall error: 8.50654877478939
+Overall accuracy std: 0.00024999999999999464
+Overall error std: 2.8494002577201174
+Took 537.9479291439056 to complete evaluation
+
+
+136# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 16
+> Velocity: (0.1, 0.1)
+
+Took 3.240454912185669 to generate all
+Took 0.002928018569946289 to create build distribution matrix
+Took 563.1173107624054 to create recover traces from aggregated data
+Took 263.633013010025 to map traces recovered traces to real ones
+Overall accuracy: 0.3533854166666667
+Overall error: 6.158904561463954
+Overall accuracy std: 0.0007523148148147917
+Overall error std: 1.9954355112945013
+Took 830.4659910202026 to complete evaluation
+
+
+137# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 64
+> Velocity: (0.1, 0.1)
+
+Took 1.8896839618682861 to generate all
+Took 0.003945112228393555 to create build distribution matrix
+Took 1199.199646949768 to create recover traces from aggregated data
+Took 169.01784706115723 to map traces recovered traces to real ones
+Overall accuracy: 0.18456307870370367
+Overall error: 7.48250451000263
+Overall accuracy std: 0.0005208333333333148
+Overall error std: 2.3229601654611067
+Took 1370.430852651596 to complete evaluation
+
+
+138# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 144
+> Velocity: (0.1, 0.1)
+
+Took 1.569931983947754 to generate all
+Took 0.028009891510009766 to create build distribution matrix
+Took 1391.0475602149963 to create recover traces from aggregated data
+Took 159.63992595672607 to map traces recovered traces to real ones
+Overall accuracy: 0.14418402777777778
+Overall error: 7.932643046035413
+Overall accuracy std: 0.00031828703703704606
+Overall error std: 2.534761701344221
+Took 1552.6847438812256 to complete evaluation
+
+
+139# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 256
+> Velocity: (0.1, 0.1)
+
+Took 2.02639102935791 to generate all
+Took 0.04257988929748535 to create build distribution matrix
+Took 1339.7391591072083 to create recover traces from aggregated data
+Took 136.2288269996643 to map traces recovered traces to real ones
+Overall accuracy: 0.11480034722222221
+Overall error: 7.9553342598176755
+Overall accuracy std: 0.000434027777777779
+Overall error std: 2.608251060099551
+Took 1478.3950850963593 to complete evaluation
+
+
+140# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 400
+> Velocity: (0.1, 0.1)
+
+Took 1.4678778648376465 to generate all
+Took 0.027650117874145508 to create build distribution matrix
+Took 1402.5101659297943 to create recover traces from aggregated data
+Took 263.01331210136414 to map traces recovered traces to real ones
+Overall accuracy: 0.09939236111111112
+Overall error: 8.40109617530084
+Overall accuracy std: 0.00028935185185185455
+Overall error std: 2.810999159239533
+Took 1667.4933218955994 to complete evaluation
+
+
+141# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 576
+> Velocity: (0.1, 0.1)
+
+Took 2.676063060760498 to generate all
+Took 0.07833290100097656 to create build distribution matrix
+Took 1501.4345409870148 to create recover traces from aggregated data
+Took 261.75283694267273 to map traces recovered traces to real ones
+Overall accuracy: 0.09283854166666665
+Overall error: 8.328935858120245
+Overall accuracy std: 5.787037037036646e-05
+Overall error std: 2.9244580407538834
+Took 1766.492436170578 to complete evaluation
+
+
+142# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 784
+> Velocity: (0.1, 0.1)
+
+Took 2.8014419078826904 to generate all
+Took 0.12397098541259766 to create build distribution matrix
+Took 1657.4266567230225 to create recover traces from aggregated data
+Took 289.33568382263184 to map traces recovered traces to real ones
+Overall accuracy: 0.08411458333333333
+Overall error: 8.294980515985703
+Overall accuracy std: 0.0012731481481481565
+Overall error std: 2.7607605811710005
+Took 1950.3388221263885 to complete evaluation
+
+
+143# Evaluating trace simulator with parameters:
+> Users: 576
+> Towers: 1024
+> Velocity: (0.1, 0.1)
+
+Took 3.135756015777588 to generate all
+Took 0.12441015243530273 to create build distribution matrix
+Took 1242.3781387805939 to create recover traces from aggregated data
+Took 502.5340259075165 to map traces recovered traces to real ones
+Overall accuracy: 0.0861400462962963
+Overall error: 8.242625944305253
+Overall accuracy std: 0.0005497685185185175
+Overall error std: 2.8981997148940266
+Took 1749.575356245041 to complete evaluation
+
+

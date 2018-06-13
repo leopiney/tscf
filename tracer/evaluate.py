@@ -54,22 +54,32 @@ def evaluate_simulator(simulator, number_users, number_towers, velocity, mobilit
     #
     # The analysis information is stored as a list with the following items:
     #
-    # [
-    #   map_results,
-    #   global_accuracy,
-    #   map_accuracy,
-    #   map_error,
-    #   towers,
-    #   traces,
-    #   aggregated_data,
+    # {
+    #   analysis: [
+    #     map_results,
+    #     global_accuracy,
+    #     map_accuracy,
+    #     map_error,
+    #   ],
+    #   simulator_towers,
+    #   simulator_traces,
+    #   simulator_aggregated_data,
+    #   recovered_traces,
+    #   recovered_costs,
     # ]
     #
-    k_analysis.append(simulator.towers)
-    k_analysis.append(simulator.traces)
-    k_analysis.append(simulator.aggregated_data)
+    dump = {
+        'analysis': k_analysis,
+        'simulator_towers': simulator.towers,
+        'simulator_traces': simulator.traces,
+        'simulator_aggregated_data': simulator.aggregated_data,
+        'recovered_costs': trajectory_recovery.C,
+        'recovered_distribution': trajectory_recovery.L,
+        'recovered_traces': trajectory_recovery.S.T,
+    }
 
     pickle.dump(
-        k_analysis,
+        dump,
         open('_'.join([
             './evaluate/.tmp_eval',
             f'm_{mobility_model}',

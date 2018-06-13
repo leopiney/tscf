@@ -72,9 +72,12 @@ class TraceSimulator(object):
                 print(
                     f'WARNING: number of towers changed to {self.number_towers}')
 
-            X, Y = np.mgrid[0:1:step * 1j, 0:1:step * 1j]
+            maxXY = 1 - 1 / step
+            X, Y = np.mgrid[0:maxXY:step * 1j, 0:maxXY:step * 1j]
             positions = np.vstack([X.ravel(), Y.ravel()])
             self.towers = positions.swapaxes(1, 0)
+            # Pad the towers to the center of the cell
+            self.towers += 1 / (2 * step)
 
         self.towers_manager = TowersManager(self.towers, self.vel_friction)
 
@@ -245,9 +248,12 @@ class MobilitySimulator(object):
                 print(
                     f'WARNING: number of towers changed to {self.number_towers}')
 
-            X, Y = np.mgrid[0:1:step * 1j, 0:1:step * 1j]
+            maxXY = 1 - 1 / step
+            X, Y = np.mgrid[0:maxXY:step * 1j, 0:maxXY:step * 1j]
             positions = np.vstack([X.ravel(), Y.ravel()])
             self.towers = positions.swapaxes(1, 0)
+            # Pad the towers to the center of the cell
+            self.towers += 1 / (2 * step)
 
         self.towers_manager = TowersManager(self.towers)
 
