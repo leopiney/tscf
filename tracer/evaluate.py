@@ -94,9 +94,12 @@ def evaluate_simulations(mobility_model):
     """Evaluates simulations on a grid of parameters for the simulators"""
     number_cycles = 24
 
-    params_number_users = [x**2 for x in (4, 8, 12, 16, 20, 24)]
-    params_number_towers = [x**2 for x in (4, 8, 12, 16, 20, 24, 28, 32)]
-    params_velocity = [(0.01, 0.01), (0.05, 0.05), (0.1, 0.1)]
+    # params_number_users = [x**2 for x in (4, 8, 12, 16, 20, 24)]
+    # params_number_towers = [x**2 for x in (4, 8, 12, 16, 20, 24, 28, 32)]
+    # params_velocity = [(0.01, 0.01), (0.05, 0.05), (0.1, 0.1)]
+    params_number_users = [16, 576]
+    params_number_towers = [16, 576]
+    params_velocity = [(0.05, 0.05)]
 
     test_id = 0
     for velocity in params_velocity:

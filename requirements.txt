@@ -16,3 +16,4 @@ jupyterlab
 ipython
 ipdb
 flake8
+fire

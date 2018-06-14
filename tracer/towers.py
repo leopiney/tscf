@@ -4,7 +4,6 @@ import numpy as np
 import pandas as pd
 
 
-from tracer.utils import distance
 from tracer.utils import is_in_box
 
 
@@ -84,21 +83,8 @@ class TowersManager(object):
         plt.gca().set_aspect('equal', adjustable='box')
         return ax
 
-    def plot_user_trace(
-        self,
-        trace,
-        figsize=(12, 12),
-        annotate_towers=True,
-        verbose=False
-    ):
-        import matplotlib.pyplot as plt
-
-        ax = self.plot_towers(
-            figsize=figsize,
-            annotate_towers=annotate_towers
-        )
-
-        cycol = itertools.cycle('bgrcmk')
+    def plot_user_trace_aux(self, trace, ax, colors='bgrcmk', verbose=False):
+        cycol = itertools.cycle(colors)
 
         for i in range(len(trace) - 1):
             if trace[i] == trace[i + 1]:
@@ -126,5 +112,41 @@ class TowersManager(object):
                 fc=color,
                 ec=color
             )
+
+    def plot_user_trace(
+        self,
+        trace,
+        figsize=(12, 12),
+        annotate_towers=True,
+        verbose=False
+    ):
+        import matplotlib.pyplot as plt
+
+        ax = self.plot_towers(
+            figsize=figsize,
+            annotate_towers=annotate_towers
+        )
+
+        self.plot_user_trace_aux(trace, ax, verbose=verbose)
+
+        plt.gca().set_aspect('equal', adjustable='box')
+
+    def plot_user_mapping_trace(
+        self,
+        recovered_trace,
+        real_trace,
+        figsize=(12, 12),
+        annotate_towers=True,
+        verbose=False
+    ):
+        import matplotlib.pyplot as plt
+
+        ax = self.plot_towers(
+            figsize=figsize,
+            annotate_towers=annotate_towers
+        )
+
+        self.plot_user_trace_aux(recovered_trace, ax, colors='r', verbose=verbose)
+        self.plot_user_trace_aux(real_trace, ax, colors='b', verbose=verbose)
 
         plt.gca().set_aspect('equal', adjustable='box')
