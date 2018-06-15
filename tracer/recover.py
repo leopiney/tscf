@@ -1,5 +1,6 @@
 """Trajectory recovery module"""
 import itertools
+import math
 import numpy as np
 
 from joblib import Parallel, delayed
@@ -118,6 +119,23 @@ class TrajectoryRecovery(object):
             'recovered_trajectories': self.S,
         }
 
+    def get_coordinates(self, index, old_grid):
+        return (index % old_grid), (math.floor(index / old_grid))
+
+    def are_same_coord(self, coord1, coord2, old_grid, new_grid):
+        return (
+            math.floor(coord1 / (2 ** (old_grid - new_grid)))
+            == math.floor(coord2 / (2 ** (old_grid - new_grid))))
+
+    def are_on_same_district(self, index1, index2, old_grid, new_grid):
+        x1, y1 = self.get_coordinates(index1, old_grid)
+        x2, y2 = self.get_coordinates(index2, old_grid)
+        return (
+            self.are_same_coord(x1, x2, old_grid, new_grid)
+            and self.are_same_coord(y1, y2, old_grid, new_grid))
+
+    # TODO here we should change the code to use the are_on_same_district
+    # function
     def get_traces_common_elements(self, trace_1, trace_2):
         return np.sum(trace_1 == trace_2)
 
