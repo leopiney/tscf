@@ -78,9 +78,14 @@ class TowersManager(object):
         if annotate_towers:
             for i in range(len(df_towers)):
                 ax.annotate(
-                    f'    T{i}', (df_towers.iloc[i].x, df_towers.iloc[i].y))
+                    f'T{i}', (df_towers.iloc[i].x, df_towers.iloc[i].y))
 
-        plt.gca().set_aspect('equal', adjustable='box')
+        ax2 = plt.gca()
+        ax2.set_aspect('equal', adjustable='box')
+        ax.set_ylim(ax.get_ylim()[::-1])        # invert the axis
+        ax2.xaxis.tick_top()                     # and move the X-Axis
+        # ax2.yaxis.set_ticks(np.arange(0, 16, 1)) # set y-ticks
+        ax2.yaxis.tick_left()                    # remove right y-Ticks
         return ax
 
     def plot_user_trace_aux(self, trace, ax, colors='bgrcmk', verbose=False):
@@ -109,6 +114,7 @@ class TowersManager(object):
                 y2 - y1,
                 head_width=0.01,
                 head_length=0.01,
+                alpha=0.3,
                 fc=color,
                 ec=color
             )
@@ -148,5 +154,25 @@ class TowersManager(object):
 
         self.plot_user_trace_aux(recovered_trace, ax, colors='r', verbose=verbose)
         self.plot_user_trace_aux(real_trace, ax, colors='b', verbose=verbose)
+
+        plt.gca().set_aspect('equal', adjustable='box')
+
+    def plot_all_user_traces(
+        self,
+        traces_tuple,
+        figsize=(12, 12),
+        annotate_towers=True,
+        verbose=False
+    ):
+        import matplotlib.pyplot as plt
+
+        ax = self.plot_towers(
+            figsize=figsize,
+            annotate_towers=annotate_towers
+        )
+
+        for (traces, colors) in traces_tuple:
+            for trace in traces:
+                self.plot_user_trace_aux(trace, ax, colors=colors, verbose=verbose)
 
         plt.gca().set_aspect('equal', adjustable='box')
