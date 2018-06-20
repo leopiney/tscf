@@ -122,19 +122,24 @@ class TrajectoryRecovery(object):
     def get_coordinates(self, index, old_grid):
         return (index % old_grid), (math.floor(index / old_grid))
 
-    def are_same_coord(self, coord1, coord2, old_grid, new_grid):
-        return math.floor(coord1 / new_grid) == math.floor(coord2 / new_grid)
+    def are_same_coord(self, coord1, coord2, old_grid, accuracy):
+        return math.floor(coord1 / accuracy) == math.floor(coord2 / accuracy)
 
-    def are_on_same_district(self, index1, index2, old_grid, new_grid):
+    def are_on_same_district(self, index1, index2, old_grid, accuracy):
         x1, y1 = self.get_coordinates(index1, old_grid)
         x2, y2 = self.get_coordinates(index2, old_grid)
-        return (self.are_same_coord(x1, x2, old_grid, new_grid)
-                and self.are_same_coord(y1, y2, old_grid, new_grid))
+        return (self.are_same_coord(x1, x2, old_grid, accuracy)
+                and self.are_same_coord(y1, y2, old_grid, accuracy))
 
-    # TODO here we should change the code to use the are_on_same_district
-    # function
-    def get_traces_common_elements(self, trace_1, trace_2):
-        return np.sum(trace_1 == trace_2)
+    def get_traces_common_elements(self, trace_1, trace_2, number_towers,
+                                   accuracy=64):
+        number_towers = math.sqrt(number_towers)
+        if accuracy > number_towers:
+            accuracy = number_towers
+        common_elements = [self.are_on_same_district(
+            trace_1[i], trace_2[i], number_towers, accuracy) for i in range(
+                len(trace_1))]
+        return np.sum(common_elements)
 
     def get_traces_distance_error(self, trace_1, trace_2):
         return np.sum([
@@ -142,7 +147,8 @@ class TrajectoryRecovery(object):
             for z_t, y_t in zip(trace_1, trace_2)
         ])
 
-    def map_traces(self, real_traces, mapping_style, show_progress=False):
+    def map_traces(self, real_traces, mapping_style,
+                   accuracy, show_progress=False):
         """Maps the recovered traces with real ones
 
         @param real_traces The traces to map with the recovered traces
@@ -181,7 +187,8 @@ class TrajectoryRecovery(object):
             # many towers they have in common with the recovered_trace
             #
             common_elements = np.array([
-                self.get_traces_common_elements(recovered_trace, real_trace)
+                self.get_traces_common_elements(recovered_trace, real_trace,
+                                                self.number_towers, accuracy)
                 for real_trace in real_traces
             ])
             mapping_errors = np.array([
@@ -223,7 +230,8 @@ class TrajectoryRecovery(object):
             mapping_accuracy / self.number_cycles) / self.number_users
         return result, global_accuracy, mapping_accuracy, mapping_error
 
-    def map_traces_analysis(self, real_traces, mapping_style, k=10, n_jobs=-1):
+    def map_traces_analysis(self, real_traces, mapping_style, accuracy,
+                            k=10, n_jobs=-1):
         """Returns the mapping results starting at a random generated trace
 
         To avoid falling into local minimum values its appropiate to run
@@ -232,6 +240,6 @@ class TrajectoryRecovery(object):
 
         @returns an array of tuples (result, global_accuracy, mapping_accuracy, mapping_error)"""
         return Parallel(n_jobs=n_jobs)(
-            delayed(self.map_traces)(real_traces, mapping_style)
+            delayed(self.map_traces)(real_traces, mapping_style, accuracy)
             for _ in range(k)
         )
