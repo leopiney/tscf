@@ -119,17 +119,17 @@ class TrajectoryRecovery(object):
             'recovered_trajectories': self.S,
         }
 
-    def get_coordinates(index, old_grid):
-    return (index % old_grid), (math.floor(index / old_grid))
+    def get_coordinates(self, index, old_grid):
+        return (index % old_grid), (math.floor(index / old_grid))
 
-    def are_same_coord(coord1, coord2, old_grid, new_grid):
+    def are_same_coord(self, coord1, coord2, old_grid, new_grid):
         return math.floor(coord1 / new_grid) == math.floor(coord2 / new_grid)
 
-    def are_on_same_district(index1, index2, old_grid, new_grid):
-        x1, y1 = get_coordinates(index1, old_grid)
-        x2, y2 = get_coordinates(index2, old_grid)
-        return (are_same_coord(x1, x2, old_grid, new_grid)
-                and are_same_coord(y1, y2, old_grid, new_grid))
+    def are_on_same_district(self, index1, index2, old_grid, new_grid):
+        x1, y1 = self.get_coordinates(index1, old_grid)
+        x2, y2 = self.get_coordinates(index2, old_grid)
+        return (self.are_same_coord(x1, x2, old_grid, new_grid)
+                and self.are_same_coord(y1, y2, old_grid, new_grid))
 
     # TODO here we should change the code to use the are_on_same_district
     # function
