@@ -128,8 +128,10 @@ class TrajectoryRecovery(object):
     def are_on_same_district(self, index1, index2, old_grid, accuracy):
         x1, y1 = self.get_coordinates(index1, old_grid)
         x2, y2 = self.get_coordinates(index2, old_grid)
-        return (self.are_same_coord(x1, x2, old_grid, accuracy)
-                and self.are_same_coord(y1, y2, old_grid, accuracy))
+        return (
+            self.are_same_coord(x1, x2, old_grid, accuracy) and
+            self.are_same_coord(y1, y2, old_grid, accuracy)
+        )
 
     def get_traces_common_elements(self, trace_1, trace_2, number_towers,
                                    accuracy=64):
@@ -231,7 +233,7 @@ class TrajectoryRecovery(object):
         return result, global_accuracy, mapping_accuracy, mapping_error
 
     def map_traces_analysis(self, real_traces, mapping_style, accuracy,
-                            k=10, n_jobs=-1):
+                            k=8, n_jobs=-1):
         """Returns the mapping results starting at a random generated trace
 
         To avoid falling into local minimum values its appropiate to run

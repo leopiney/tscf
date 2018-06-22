@@ -9,34 +9,25 @@ from tracer.recover import TrajectoryRecovery
 from tracer.simulator import MobilitySimulator
 
 
-def evaluate_simulator(simulator, number_users, number_towers, velocity, mobility_model):
+def evaluate_simulation(
+        trajectory_recovery,
+        towers,
+        sampled_aggregated_data,
+        sampled_traces,
+        accuracy
+):
     """Evaluates a simulator"""
-    # Generate traces
-    simulator.generate()
-
-    # Recover trajectories
-    trajectory_recovery = TrajectoryRecovery(
-        number_users=number_users,
-        towers=simulator.towers,
-        aggregated_data=simulator.aggregated_data,
-        vel_friction=0.9
-    )
-
-    t = time()
-    trajectory_recovery.build_distribution_matrix()
-    print(f'Took {time() - t} to create build distribution matrix')
-
-    t = time()
-    trajectory_recovery.trajectory_recovery_generator()
-    print(f'Took {time() - t} to create recover traces from aggregated data')
-
     t = time()
 
     #
     # Gets the recovered traces, the accuracy and error for each assignment
     #
     k_analysis = trajectory_recovery.map_traces_analysis(
-        simulator.traces, mapping_style='accuracy', n_jobs=-1)
+        sampled_traces,
+        accuracy=accuracy,
+        mapping_style='accuracy',
+        n_jobs=-1,
+    )
     print(f'Took {time() - t} to map traces recovered traces to real ones')
 
     overall_accuracy = np.mean([a[1] for a in k_analysis])
@@ -70,9 +61,9 @@ def evaluate_simulator(simulator, number_users, number_towers, velocity, mobilit
     #
     dump = {
         'analysis': k_analysis,
-        'simulator_towers': simulator.towers,
-        'simulator_traces': simulator.traces,
-        'simulator_aggregated_data': simulator.aggregated_data,
+        'simulator_towers': towers,
+        'sampled_traces': sampled_traces,
+        'sampled_aggregated_data': sampled_aggregated_data,
         'recovered_costs': trajectory_recovery.C,
         'recovered_distribution': trajectory_recovery.L,
         'recovered_traces': trajectory_recovery.S.T,
@@ -81,63 +72,91 @@ def evaluate_simulator(simulator, number_users, number_towers, velocity, mobilit
     pickle.dump(
         dump,
         open('_'.join([
-            './evaluate/.tmp_eval',
-            f'm_{mobility_model}',
-            f'u_{number_users}',
-            f't_{number_towers}',
-            f'v_{velocity}.pkl',
+            './evaluate/.tmp_eval_s_{sampling}_acc_{accuracy}.pkl',
         ]), 'wb')
     )
 
 
-def evaluate_simulations(mobility_model):
+def evaluate_simulations():
     """Evaluates simulations on a grid of parameters for the simulators"""
-    number_cycles = 24
+    number_users = 576
+    number_towers = 576
 
-    # params_number_users = [x**2 for x in (4, 8, 12, 16, 20, 24)]
-    # params_number_towers = [x**2 for x in (4, 8, 12, 16, 20, 24, 28, 32)]
-    # params_velocity = [(0.01, 0.01), (0.05, 0.05), (0.1, 0.1)]
-    params_number_users = [16, 576]
-    params_number_towers = [16, 576]
-    params_velocity = [(0.05, 0.05)]
+    params_samplings = [1, 2, 3]
+    params_accuracy = [1, 2, 4, 8]  # Size of the districts
+
+    simulator = MobilitySimulator(
+        number_users=number_users,
+        number_towers=number_towers,
+        number_cycles=48,
+        velocity=(0.01, 0.01),
+        wait_time_max=None,
+        mobility_model='random_direction',
+        verbose=True,
+    )
+
+    print('Generating simulator data...')
+    simulator.generate()
 
     test_id = 0
-    for velocity in params_velocity:
-        for number_users in params_number_users:
-            for number_towers in params_number_towers:
-                t_0 = time()
-                print(f'{test_id}# Evaluating trace simulator with parameters:')
-                print(f'> Users: {number_users}')
-                print(f'> Towers: {number_towers}')
-                print(f'> Velocity: {velocity}\n')
+    for sampling in params_samplings:
+        t_0 = time()
+        print(f'{test_id}# Evaluating simulation with parameters:')
+        print(f'> Sampling: {sampling}')
 
-                simulator = MobilitySimulator(
-                    number_users=number_users,
-                    number_towers=number_towers,
-                    number_cycles=number_cycles,
-                    velocity=velocity,
-                    wait_time_max=None,
-                    mobility_model=mobility_model,
-                    verbose=True,
-                )
+        # Samples the aggregated data and traces
+        sampled_aggregated_data = simulator.aggregated_data[::sampling, :]
+        sampled_traces = simulator.traces[:, ::sampling]
 
-                evaluate_simulator(
-                    simulator,
-                    number_users=number_users,
-                    number_towers=number_towers,
-                    velocity=velocity,
-                    mobility_model=mobility_model,
-                )
-                test_id += 1
+        print(
+            f'Aggregated data with shape {simulator.aggregated_data.shape} turned into'
+            f' {sampled_aggregated_data.shape}'
+        )
+        print(
+            f'Traces with shape {simulator.traces.shape} turned into'
+            f' {sampled_traces.shape}'
+        )
 
-                print(f'Took {time() - t_0} to complete evaluation\n\n')
+        # Recover trajectories
+        trajectory_recovery = TrajectoryRecovery(
+            number_users=number_users,
+            towers=simulator.towers,
+            aggregated_data=sampled_aggregated_data,
+            vel_friction=0.9,
+        )
+
+        t = time()
+        trajectory_recovery.build_distribution_matrix()
+        print(f'Took {time() - t} to create build distribution matrix')
+
+        t = time()
+        trajectory_recovery.trajectory_recovery_generator()
+        print(f'Took {time() - t} to create recover traces from aggregated data')
+
+        for accuracy in params_accuracy:
+            print(f'Mapping recovered traces with parameters:')
+            print(f'> Accuracy: {accuracy}\n')
+            t_accuracy = time()
+
+            evaluate_simulation(
+                trajectory_recovery,
+                towers=simulator.towers,
+                sampled_aggregated_data=sampled_aggregated_data,
+                sampled_traces=sampled_traces,
+                accuracy=accuracy,
+            )
+            test_id += 1
+
+            print(f'Took {time() - t_accuracy} to complete evaluation\n\n')
+
+        print(f'Took {time() - t_0} to complete all evaluations\n\n')
 
 
 class Evaluator(object):
     """Evaluates the mobility models"""
 
-    def run(self, mobility_model='custom'):
-        evaluate_simulations(mobility_model)
+    def run(self):
+        evaluate_simulations()
 
 
 if __name__ == '__main__':
