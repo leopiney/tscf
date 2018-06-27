@@ -1,11 +1,6 @@
-array=( 30 31 32 33 34 35 36 37 38 39 )
+array=( 0 1 2 3 4 5 6 7 8 9)
 
 for i in "${array[@]}"
 do
-  python -m tracer.evaluate run random_direction > evaluate/evaluate_random_direction_$i.log &
-done
-
-for i in "${array[@]}"
-do
-  python -m tracer.evaluate run random_waypoint > evaluate/evaluate_random_waypoint_$i.log &
+  python -u -m tracer.evaluate run > evaluate/evaluate_districts_$i.log &
 done

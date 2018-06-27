@@ -1,0 +1,12 @@
+#1 - Creating simulation with parameters:
+> Users: 576
+> Towers: 144
+> Iteration steps: 96
+
+Generating simulator data...
+Took 0.715540885925293 to generate all
+Evaluating simulation with parameters:
+> Sampling: 1
+Aggregated data with shape (96, 144) turned into (96, 144)
+Traces with shape (576, 96) turned into (576, 96)
+Took 0.01134490966796875 to create build distribution matrix

@@ -1,0 +1,49 @@
+#1 - Creating simulation with parameters:
+> Users: 576
+> Towers: 256
+> Iteration steps: 96
+
+Generating simulator data...
+Took 2.346475839614868 to generate all
+Evaluating simulation with parameters:
+> Sampling: 1
+Aggregated data with shape (96, 256) turned into (96, 256)
+Traces with shape (576, 96) turned into (576, 96)
+Took 0.04370379447937012 to create build distribution matrix
+Took 2154.3361542224884 to create recover traces from aggregated data
+Mapping recovered traces with parameters:
+> Accuracy: 1
+
+Took 10333.183116912842 to map recovered traces to simulated ones
+Overall accuracy: 0.09047670717592592
+Overall error: 38.3250930325312
+Overall accuracy std: 0.0
+Overall error std: 8.593754142212562
+Took 10335.52370095253 to complete evaluation with accuracy 1
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 2
+
+Took 10383.425817012787 to map recovered traces to simulated ones
+Overall accuracy: 0.1610423900462963
+Overall error: 36.80782352538756
+Overall accuracy std: 0.0
+Overall error std: 7.787181061399514
+Took 10385.700492143631 to complete evaluation with accuracy 2
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 4
+
+Took 10406.641716003418 to map recovered traces to simulated ones
+Overall accuracy: 0.3046332465277778
+Overall error: 35.734871993103354
+Overall accuracy std: 0.0
+Overall error std: 7.401595548994751
+Took 10408.661031961441 to complete evaluation with accuracy 4
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 8
+
