@@ -4,46 +4,972 @@
 > Iteration steps: 96
 
 Generating simulator data...
-Took 2.346803903579712 to generate all
+Took 0.441082239151001 to generate all
 Evaluating simulation with parameters:
 > Sampling: 1
 Aggregated data with shape (96, 256) turned into (96, 256)
 Traces with shape (576, 96) turned into (576, 96)
-Took 0.045114994049072266 to create build distribution matrix
-Took 2123.3877477645874 to create recover traces from aggregated data
+Took 0.008702278137207031 to create build distribution matrix
+Took 881.2796728610992 to create recover traces from aggregated data
 Mapping recovered traces with parameters:
 > Accuracy: 1
 
-Took 10286.070970058441 to map recovered traces to simulated ones
-Overall accuracy: 0.08931929976851853
-Overall error: 38.396816311926635
-Overall accuracy std: 0.0
-Overall error std: 8.471014872202748
-Took 10290.59168601036 to complete evaluation with accuracy 1
+Took 375.64519691467285 to map recovered traces to simulated ones
+Overall accuracy: 0.08800591362847224
+Overall error: 38.62562026514035
+Overall accuracy std: 0.0005130179489738936
+Overall error std: 7.983426069286999
+Took 376.1698479652405 to complete evaluation with accuracy 1
 
 
 Mapping recovered traces with parameters:
 > Accuracy: 2
 
-Took 10370.341007947922 to map recovered traces to simulated ones
-Overall accuracy: 0.1611870659722222
-Overall error: 36.91041484995387
-Overall accuracy std: 0.0
-Overall error std: 8.330452154600241
-Took 10374.326862096786 to complete evaluation with accuracy 2
+Took 377.73108649253845 to map recovered traces to simulated ones
+Overall accuracy: 0.15857385706018517
+Overall error: 37.210785804924484
+Overall accuracy std: 0.0010469108409676925
+Overall error std: 7.604609560930771
+Took 378.2130124568939 to complete evaluation with accuracy 2
 
 
 Mapping recovered traces with parameters:
 > Accuracy: 4
 
-Took 10351.121917963028 to map recovered traces to simulated ones
-Overall accuracy: 0.3070023148148148
-Overall error: 35.483231574019804
-Overall accuracy std: 0.0
-Overall error std: 7.242230354368279
-Took 10355.33002781868 to complete evaluation with accuracy 4
+Took 369.67501616477966 to map recovered traces to simulated ones
+Overall accuracy: 0.30039469401041663
+Overall error: 36.040617537511174
+Overall accuracy std: 0.001527120872303744
+Overall error std: 7.259921771451197
+Took 370.2274806499481 to complete evaluation with accuracy 4
 
 
 Mapping recovered traces with parameters:
 > Accuracy: 8
+
+Took 386.6235394477844 to map recovered traces to simulated ones
+Overall accuracy: 0.5608610930266205
+Overall error: 37.60296941384237
+Overall accuracy std: 0.0022614823337259696
+Overall error std: 7.120289406455127
+Took 387.2498288154602 to complete evaluation with accuracy 8
+
+
+Took 2393.1506712436676 to complete all evaluations with sampling 1
+
+
+Evaluating simulation with parameters:
+> Sampling: 2
+Aggregated data with shape (96, 256) turned into (48, 256)
+Traces with shape (576, 96) turned into (576, 48)
+Took 0.018076658248901367 to create build distribution matrix
+Took 459.877721786499 to create recover traces from aggregated data
+Mapping recovered traces with parameters:
+> Accuracy: 1
+
+Took 186.59987115859985 to map recovered traces to simulated ones
+Overall accuracy: 0.09772406684027778
+Overall error: 18.0768006394418
+Overall accuracy std: 0.0005255209563560473
+Overall error std: 4.6311701046535525
+Took 186.82893633842468 to complete evaluation with accuracy 1
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 2
+
+Took 186.4486780166626 to map recovered traces to simulated ones
+Overall accuracy: 0.18150047019675924
+Overall error: 17.41317443332838
+Overall accuracy std: 0.0009670447861156813
+Overall error std: 4.3352787270616915
+Took 186.58724641799927 to complete evaluation with accuracy 2
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 4
+
+Took 187.87633562088013 to map recovered traces to simulated ones
+Overall accuracy: 0.34908040364583337
+Overall error: 16.673786790551276
+Overall accuracy std: 0.0015707436923396028
+Overall error std: 4.134946912782419
+Took 188.01429724693298 to complete evaluation with accuracy 4
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 8
+
+Took 190.82919836044312 to map recovered traces to simulated ones
+Overall accuracy: 0.6159939236111112
+Overall error: 17.75845443467989
+Overall accuracy std: 0.0013798833808547142
+Overall error std: 4.006732011223442
+Took 190.98270440101624 to complete evaluation with accuracy 8
+
+
+Took 1212.3212015628815 to complete all evaluations with sampling 2
+
+
+Evaluating simulation with parameters:
+> Sampling: 3
+Aggregated data with shape (96, 256) turned into (32, 256)
+Traces with shape (576, 96) turned into (576, 32)
+Took 0.0032825469970703125 to create build distribution matrix
+Took 305.53034710884094 to create recover traces from aggregated data
+Mapping recovered traces with parameters:
+> Accuracy: 1
+
+Took 127.44230818748474 to map recovered traces to simulated ones
+Overall accuracy: 0.11077202690972222
+Overall error: 11.022468887623678
+Overall accuracy std: 0.0006554068700276433
+Overall error std: 3.431485624790523
+Took 127.562185049057 to complete evaluation with accuracy 1
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 2
+
+Took 127.2535309791565 to map recovered traces to simulated ones
+Overall accuracy: 0.21150037977430558
+Overall error: 10.500047953130668
+Overall accuracy std: 0.0018052914214317735
+Overall error std: 3.365957549425311
+Took 127.40743041038513 to complete evaluation with accuracy 2
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 4
+
+Took 128.79447531700134 to map recovered traces to simulated ones
+Overall accuracy: 0.40981716579861116
+Overall error: 9.79810671740701
+Overall accuracy std: 0.001813590194854965
+Overall error std: 3.065962213412373
+Took 128.88908314704895 to complete evaluation with accuracy 4
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 8
+
+Took 130.96232175827026 to map recovered traces to simulated ones
+Overall accuracy: 0.6874118381076388
+Overall error: 10.836998564804082
+Overall accuracy std: 0.0039061499217835634
+Overall error std: 3.0668518792575665
+Took 131.12832021713257 to complete evaluation with accuracy 8
+
+
+Took 820.527538061142 to complete all evaluations with sampling 3
+
+
+Evaluating simulation with parameters:
+> Sampling: 4
+Aggregated data with shape (96, 256) turned into (24, 256)
+Traces with shape (576, 96) turned into (576, 24)
+Took 0.007850408554077148 to create build distribution matrix
+Took 233.17826223373413 to create recover traces from aggregated data
+Mapping recovered traces with parameters:
+> Accuracy: 1
+
+Took 98.47239661216736 to map recovered traces to simulated ones
+Overall accuracy: 0.13095883969907407
+Overall error: 7.528307951368989
+Overall accuracy std: 0.0012544628687817623
+Overall error std: 2.7270775658847413
+Took 98.54721760749817 to complete evaluation with accuracy 1
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 2
+
+Took 98.57431364059448 to map recovered traces to simulated ones
+Overall accuracy: 0.24442997685185183
+Overall error: 7.05720464256646
+Overall accuracy std: 0.000899146621430557
+Overall error std: 2.6006876544785325
+Took 98.64462351799011 to complete evaluation with accuracy 2
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 4
+
+Took 98.80356478691101 to map recovered traces to simulated ones
+Overall accuracy: 0.4582338686342593
+Overall error: 6.672693676918794
+Overall accuracy std: 0.0017409786230164865
+Overall error std: 2.4061797909410303
+Took 98.87442374229431 to complete evaluation with accuracy 4
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 8
+
+Took 99.7221052646637 to map recovered traces to simulated ones
+Overall accuracy: 0.737132884837963
+Overall error: 7.399904683000198
+Overall accuracy std: 0.0019371309275334706
+Overall error std: 2.3508617730563497
+Took 99.79330015182495 to complete evaluation with accuracy 8
+
+
+Took 629.0624387264252 to complete all evaluations with sampling 4
+
+
+Evaluating simulation with parameters:
+> Sampling: 8
+Aggregated data with shape (96, 256) turned into (12, 256)
+Traces with shape (576, 96) turned into (576, 12)
+Took 0.0011909008026123047 to create build distribution matrix
+Took 110.17884993553162 to create recover traces from aggregated data
+Mapping recovered traces with parameters:
+> Accuracy: 1
+
+Took 53.167073249816895 to map recovered traces to simulated ones
+Overall accuracy: 0.19059244791666669
+Overall error: 2.655895616082867
+Overall accuracy std: 0.0021880739159240064
+Overall error std: 1.512939628172882
+Took 53.19991374015808 to complete evaluation with accuracy 1
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 2
+
+Took 52.74212598800659 to map recovered traces to simulated ones
+Overall accuracy: 0.3407479745370371
+Overall error: 2.2542427806716123
+Overall accuracy std: 0.0011293760847797983
+Overall error std: 1.230195931431388
+Took 52.768205881118774 to complete evaluation with accuracy 2
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 4
+
+Took 53.69664168357849 to map recovered traces to simulated ones
+Overall accuracy: 0.6053240740740741
+Overall error: 2.091976045747246
+Overall accuracy std: 0.002251791437539516
+Overall error std: 0.9979045867773263
+Took 53.722758531570435 to complete evaluation with accuracy 4
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 8
+
+Took 54.378565311431885 to map recovered traces to simulated ones
+Overall accuracy: 0.8856336805555556
+Overall error: 2.6819884039056765
+Overall accuracy std: 0.00248804738453699
+Overall error std: 0.9994059618846919
+Took 54.40420913696289 to complete evaluation with accuracy 8
+
+
+Took 324.2779047489166 to complete all evaluations with sampling 8
+
+
+Evaluating simulation with parameters:
+> Sampling: 16
+Aggregated data with shape (96, 256) turned into (6, 256)
+Traces with shape (576, 96) turned into (576, 6)
+Took 0.00061798095703125 to create build distribution matrix
+Took 53.55721187591553 to create recover traces from aggregated data
+Mapping recovered traces with parameters:
+> Accuracy: 1
+
+Took 29.486459493637085 to map recovered traces to simulated ones
+Overall accuracy: 0.20923755787037035
+Overall error: 1.3653553302238786
+Overall accuracy std: 0.002573595229632554
+Overall error std: 0.7385237089275741
+Took 29.50151252746582 to complete evaluation with accuracy 1
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 2
+
+Took 29.511325120925903 to map recovered traces to simulated ones
+Overall accuracy: 0.35886863425925924
+Overall error: 1.1127230423369685
+Overall accuracy std: 0.001136880327365596
+Overall error std: 0.5661045690066571
+Took 29.52261209487915 to complete evaluation with accuracy 2
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 4
+
+Took 29.445207834243774 to map recovered traces to simulated ones
+Overall accuracy: 0.6128472222222223
+Overall error: 1.0828526757431118
+Overall accuracy std: 0.0023728616126818566
+Overall error std: 0.4967482339451622
+Took 29.456282138824463 to complete evaluation with accuracy 4
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 8
+
+Took 29.77641463279724 to map recovered traces to simulated ones
+Overall accuracy: 0.8683087384259259
+Overall error: 1.4751208473180872
+Overall accuracy std: 0.002465599966312803
+Overall error std: 0.557836614408507
+Took 29.787482738494873 to complete evaluation with accuracy 8
+
+
+Took 171.82983708381653 to complete all evaluations with sampling 16
+
+
+#2 - Creating simulation with parameters:
+> Users: 576
+> Towers: 576
+> Iteration steps: 96
+
+Generating simulator data...
+Took 0.5319323539733887 to generate all
+Evaluating simulation with parameters:
+> Sampling: 1
+Aggregated data with shape (96, 576) turned into (96, 576)
+Traces with shape (576, 96) turned into (576, 96)
+Took 0.01670694351196289 to create build distribution matrix
+Took 833.195187330246 to create recover traces from aggregated data
+Mapping recovered traces with parameters:
+> Accuracy: 1
+
+Took 399.82562494277954 to map recovered traces to simulated ones
+Overall accuracy: 0.06720648871527778
+Overall error: 39.579022859621304
+Overall accuracy std: 0.00037421679591064563
+Overall error std: 8.23400570053213
+Took 400.28412771224976 to complete evaluation with accuracy 1
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 2
+
+Took 393.5579218864441 to map recovered traces to simulated ones
+Overall accuracy: 0.11117666739004631
+Overall error: 38.69565766505651
+Overall accuracy std: 0.0011382796205087141
+Overall error std: 8.308400785582526
+Took 394.0378873348236 to complete evaluation with accuracy 2
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 4
+
+Took 396.2077589035034 to map recovered traces to simulated ones
+Overall accuracy: 0.20198341652199076
+Overall error: 37.05709794602832
+Overall accuracy std: 0.0008298908318766491
+Overall error std: 8.039950037309664
+Took 396.6869218349457 to complete evaluation with accuracy 4
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 8
+
+Took 402.47964119911194 to map recovered traces to simulated ones
+Overall accuracy: 0.3945244683159722
+Overall error: 36.418646545792726
+Overall accuracy std: 0.0011121938832347538
+Overall error std: 7.460632485436202
+Took 402.95366501808167 to complete evaluation with accuracy 8
+
+
+Took 2427.1796963214874 to complete all evaluations with sampling 1
+
+
+Evaluating simulation with parameters:
+> Sampling: 2
+Aggregated data with shape (96, 576) turned into (48, 576)
+Traces with shape (576, 96) turned into (576, 48)
+Took 0.02105426788330078 to create build distribution matrix
+Took 425.86467361450195 to create recover traces from aggregated data
+Mapping recovered traces with parameters:
+> Accuracy: 1
+
+Took 209.20224332809448 to map recovered traces to simulated ones
+Overall accuracy: 0.0774197048611111
+Overall error: 18.052148981588857
+Overall accuracy std: 0.0005860044757674899
+Overall error std: 4.979736103218511
+Took 209.3617217540741 to complete evaluation with accuracy 1
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 2
+
+Took 199.5268473625183 to map recovered traces to simulated ones
+Overall accuracy: 0.13310185185185186
+Overall error: 17.52550677831129
+Overall accuracy std: 0.0010688224722068334
+Overall error std: 4.876893962275359
+Took 199.66411757469177 to complete evaluation with accuracy 2
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 4
+
+Took 208.35005044937134 to map recovered traces to simulated ones
+Overall accuracy: 0.24620677806712965
+Overall error: 16.49769861321143
+Overall accuracy std: 0.001298869054931128
+Overall error std: 4.558581687017169
+Took 208.48103094100952 to complete evaluation with accuracy 4
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 8
+
+Took 201.34714722633362 to map recovered traces to simulated ones
+Overall accuracy: 0.47321686921296297
+Overall error: 15.881636557228227
+Overall accuracy std: 0.0016644610028883897
+Overall error std: 4.128906090163425
+Took 201.4824824333191 to complete evaluation with accuracy 8
+
+
+Took 1244.9066441059113 to complete all evaluations with sampling 2
+
+
+Evaluating simulation with parameters:
+> Sampling: 3
+Aggregated data with shape (96, 576) turned into (32, 576)
+Traces with shape (576, 96) turned into (576, 32)
+Took 0.005898952484130859 to create build distribution matrix
+Took 288.04948353767395 to create recover traces from aggregated data
+Mapping recovered traces with parameters:
+> Accuracy: 1
+
+Took 139.51144433021545 to map recovered traces to simulated ones
+Overall accuracy: 0.0986599392361111
+Overall error: 10.999381332861791
+Overall accuracy std: 0.0009041793246798499
+Overall error std: 3.7290883702962243
+Took 139.6183898448944 to complete evaluation with accuracy 1
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 2
+
+Took 132.98353123664856 to map recovered traces to simulated ones
+Overall accuracy: 0.1611056857638889
+Overall error: 10.42976198020023
+Overall accuracy std: 0.0010509641182622938
+Overall error std: 3.554475419666571
+Took 133.07412099838257 to complete evaluation with accuracy 2
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 4
+
+Took 134.20576930046082 to map recovered traces to simulated ones
+Overall accuracy: 0.2965766059027778
+Overall error: 9.67235807596263
+Overall accuracy std: 0.0022487393420206935
+Overall error std: 3.408417073271017
+Took 134.2940936088562 to complete evaluation with accuracy 4
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 8
+
+Took 134.92980027198792 to map recovered traces to simulated ones
+Overall accuracy: 0.5399644639756944
+Overall error: 9.353495224456854
+Overall accuracy std: 0.002415488865311042
+Overall error std: 3.1563547412860684
+Took 135.01981925964355 to complete evaluation with accuracy 8
+
+
+Took 830.0722382068634 to complete all evaluations with sampling 3
+
+
+Evaluating simulation with parameters:
+> Sampling: 4
+Aggregated data with shape (96, 576) turned into (24, 576)
+Traces with shape (576, 96) turned into (576, 24)
+Took 0.0045588016510009766 to create build distribution matrix
+Took 198.81563591957092 to create recover traces from aggregated data
+Mapping recovered traces with parameters:
+> Accuracy: 1
+
+Took 102.02804923057556 to map recovered traces to simulated ones
+Overall accuracy: 0.13097692418981483
+Overall error: 7.185542896877458
+Overall accuracy std: 0.001561535824277728
+Overall error std: 2.953745704423517
+Took 102.10593724250793 to complete evaluation with accuracy 1
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 2
+
+Took 103.04022789001465 to map recovered traces to simulated ones
+Overall accuracy: 0.20011393229166666
+Overall error: 6.836030535016489
+Overall accuracy std: 0.002493283363344063
+Overall error std: 2.7982118223667336
+Took 103.10707831382751 to complete evaluation with accuracy 2
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 4
+
+Took 104.35306167602539 to map recovered traces to simulated ones
+Overall accuracy: 0.34302662037037035
+Overall error: 6.362270087097822
+Overall accuracy std: 0.0015881436921368801
+Overall error std: 2.5987565676093687
+Took 104.41988492012024 to complete evaluation with accuracy 4
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 8
+
+Took 105.24279975891113 to map recovered traces to simulated ones
+Overall accuracy: 0.6009566695601851
+Overall error: 6.173234627926679
+Overall accuracy std: 0.003006583978159617
+Overall error std: 2.415692972339821
+Took 105.30967092514038 to complete evaluation with accuracy 8
+
+
+Took 613.7711517810822 to complete all evaluations with sampling 4
+
+
+Evaluating simulation with parameters:
+> Sampling: 8
+Aggregated data with shape (96, 576) turned into (12, 576)
+Traces with shape (576, 96) turned into (576, 12)
+Took 0.002299070358276367 to create build distribution matrix
+Took 108.57030582427979 to create recover traces from aggregated data
+Mapping recovered traces with parameters:
+> Accuracy: 1
+
+Took 54.2748601436615 to map recovered traces to simulated ones
+Overall accuracy: 0.15040870949074076
+Overall error: 2.8703755537927003
+Overall accuracy std: 0.002666649991050033
+Overall error std: 1.703192423409431
+Took 54.30752968788147 to complete evaluation with accuracy 1
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 2
+
+Took 54.78447151184082 to map recovered traces to simulated ones
+Overall accuracy: 0.25376157407407407
+Overall error: 2.407673791952885
+Overall accuracy std: 0.0015649094077534627
+Overall error std: 1.4061231815860942
+Took 54.8102343082428 to complete evaluation with accuracy 2
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 4
+
+Took 55.50258469581604 to map recovered traces to simulated ones
+Overall accuracy: 0.44788049768518523
+Overall error: 2.044328336478531
+Overall accuracy std: 0.0024389267458743156
+Overall error std: 1.0898436036163877
+Took 55.528586626052856 to complete evaluation with accuracy 4
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 8
+
+Took 54.604026794433594 to map recovered traces to simulated ones
+Overall accuracy: 0.7523148148148149
+Overall error: 2.0759869858599576
+Overall accuracy std: 0.0022354654427607476
+Overall error std: 0.8959614697953389
+Took 54.62999963760376 to complete evaluation with accuracy 8
+
+
+Took 327.8563606739044 to complete all evaluations with sampling 8
+
+
+Evaluating simulation with parameters:
+> Sampling: 16
+Aggregated data with shape (96, 576) turned into (6, 576)
+Traces with shape (576, 96) turned into (576, 6)
+Took 0.0013074874877929688 to create build distribution matrix
+Took 53.976179361343384 to create recover traces from aggregated data
+Mapping recovered traces with parameters:
+> Accuracy: 1
+
+Took 30.884572744369507 to map recovered traces to simulated ones
+Overall accuracy: 0.17603443287037035
+Overall error: 1.482650158561607
+Overall accuracy std: 0.0019780828868453896
+Overall error std: 0.7631623879502505
+Took 30.89977788925171 to complete evaluation with accuracy 1
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 2
+
+Took 31.001671075820923 to map recovered traces to simulated ones
+Overall accuracy: 0.25075954861111105
+Overall error: 1.3231340359370256
+Overall accuracy std: 0.002985858408212589
+Overall error std: 0.6870965810947004
+Took 31.0128653049469 to complete evaluation with accuracy 2
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 4
+
+Took 31.61057162284851 to map recovered traces to simulated ones
+Overall accuracy: 0.4467954282407407
+Overall error: 1.1140014676143946
+Overall accuracy std: 0.0022009649940134984
+Overall error std: 0.5099259634838104
+Took 31.621957540512085 to complete evaluation with accuracy 4
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 8
+
+Took 30.767256021499634 to map recovered traces to simulated ones
+Overall accuracy: 0.7243200231481481
+Overall error: 1.19170246534514
+Overall accuracy std: 0.0024880473845370187
+Overall error std: 0.4406707973404158
+Took 30.778557062149048 to complete evaluation with accuracy 8
+
+
+Took 178.29809713363647 to complete all evaluations with sampling 16
+
+
+#3 - Creating simulation with parameters:
+> Users: 576
+> Towers: 1024
+> Iteration steps: 96
+
+Generating simulator data...
+Took 0.685633659362793 to generate all
+Evaluating simulation with parameters:
+> Sampling: 1
+Aggregated data with shape (96, 1024) turned into (96, 1024)
+Traces with shape (576, 96) turned into (576, 96)
+Took 0.040892839431762695 to create build distribution matrix
+Took 678.0545363426208 to create recover traces from aggregated data
+Mapping recovered traces with parameters:
+> Accuracy: 1
+
+Took 386.32156348228455 to map recovered traces to simulated ones
+Overall accuracy: 0.05895091869212963
+Overall error: 40.242379935360496
+Overall accuracy std: 0.00048700277774481007
+Overall error std: 8.662490777961391
+Took 386.95414638519287 to complete evaluation with accuracy 1
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 2
+
+Took 383.6879470348358 to map recovered traces to simulated ones
+Overall accuracy: 0.08735035083912038
+Overall error: 39.386603212301985
+Overall accuracy std: 0.0008373449990513495
+Overall error std: 8.442679048374687
+Took 384.1672966480255 to complete evaluation with accuracy 2
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 4
+
+Took 386.93656516075134 to map recovered traces to simulated ones
+Overall accuracy: 0.1549953884548611
+Overall error: 38.01589772231315
+Overall accuracy std: 0.0007908185429646011
+Overall error std: 8.440678526842543
+Took 387.4113175868988 to complete evaluation with accuracy 4
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 8
+
+Took 388.3821897506714 to map recovered traces to simulated ones
+Overall accuracy: 0.30063657407407407
+Overall error: 36.42367787337744
+Overall accuracy std: 0.0014048693099707238
+Overall error std: 7.736096572236365
+Took 388.8552510738373 to complete evaluation with accuracy 8
+
+
+Took 2225.4944982528687 to complete all evaluations with sampling 1
+
+
+Evaluating simulation with parameters:
+> Sampling: 2
+Aggregated data with shape (96, 1024) turned into (48, 1024)
+Traces with shape (576, 96) turned into (576, 48)
+Took 0.018924951553344727 to create build distribution matrix
+Took 350.40297389030457 to create recover traces from aggregated data
+Mapping recovered traces with parameters:
+> Accuracy: 1
+
+Took 247.718444108963 to map recovered traces to simulated ones
+Overall accuracy: 0.07501446759259259
+Overall error: 18.126923485897887
+Overall accuracy std: 0.0003994994580869229
+Overall error std: 5.128097891217416
+Took 247.88663482666016 to complete evaluation with accuracy 1
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 2
+
+Took 204.1902050971985 to map recovered traces to simulated ones
+Overall accuracy: 0.11278392650462962
+Overall error: 17.720790175252255
+Overall accuracy std: 0.0009985439626359607
+Overall error std: 5.002188342771566
+Took 204.32859110832214 to complete evaluation with accuracy 2
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 4
+
+Took 199.28848814964294 to map recovered traces to simulated ones
+Overall accuracy: 0.19722041377314814
+Overall error: 16.955717305961617
+Overall accuracy std: 0.0009338936779271283
+Overall error std: 4.929314341110445
+Took 199.42716789245605 to complete evaluation with accuracy 4
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 8
+
+Took 203.2060136795044 to map recovered traces to simulated ones
+Overall accuracy: 0.37514015480324076
+Overall error: 15.810184995603144
+Overall accuracy std: 0.0013468317483391096
+Overall error std: 4.5519866633706005
+Took 203.3457658290863 to complete evaluation with accuracy 8
+
+
+Took 1205.456079006195 to complete all evaluations with sampling 2
+
+
+Evaluating simulation with parameters:
+> Sampling: 3
+Aggregated data with shape (96, 1024) turned into (32, 1024)
+Traces with shape (576, 96) turned into (576, 32)
+Took 0.010359764099121094 to create build distribution matrix
+Took 234.84654879570007 to create recover traces from aggregated data
+Mapping recovered traces with parameters:
+> Accuracy: 1
+
+Took 143.23181557655334 to map recovered traces to simulated ones
+Overall accuracy: 0.11796061197916667
+Overall error: 10.39610809353056
+Overall accuracy std: 0.001851138887205909
+Overall error std: 3.8746069281744506
+Took 143.33875155448914 to complete evaluation with accuracy 1
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 2
+
+Took 134.29628610610962 to map recovered traces to simulated ones
+Overall accuracy: 0.16157362196180555
+Overall error: 10.063905596262927
+Overall accuracy std: 0.0022662496700292987
+Overall error std: 3.7828417284342635
+Took 134.38652324676514 to complete evaluation with accuracy 2
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 4
+
+Took 134.85153579711914 to map recovered traces to simulated ones
+Overall accuracy: 0.26104736328125
+Overall error: 9.358089191919966
+Overall accuracy std: 0.0015347446911808352
+Overall error std: 3.5933904097466263
+Took 134.9407000541687 to complete evaluation with accuracy 4
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 8
+
+Took 136.61242985725403 to map recovered traces to simulated ones
+Overall accuracy: 0.4539455837673611
+Overall error: 8.785063789267953
+Overall accuracy std: 0.0014888692664360588
+Overall error std: 3.319072200204929
+Took 136.7024757862091 to complete evaluation with accuracy 8
+
+
+Took 784.242564201355 to complete all evaluations with sampling 3
+
+
+Evaluating simulation with parameters:
+> Sampling: 4
+Aggregated data with shape (96, 1024) turned into (24, 1024)
+Traces with shape (576, 96) turned into (576, 24)
+Took 0.007640838623046875 to create build distribution matrix
+Took 173.43346190452576 to create recover traces from aggregated data
+Mapping recovered traces with parameters:
+> Accuracy: 1
+
+Took 102.01401925086975 to map recovered traces to simulated ones
+Overall accuracy: 0.12770363136574076
+Overall error: 7.226206609827358
+Overall accuracy std: 0.0011652574297638717
+Overall error std: 3.272185923588908
+Took 102.09173464775085 to complete evaluation with accuracy 1
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 2
+
+Took 104.22996401786804 to map recovered traces to simulated ones
+Overall accuracy: 0.17941623263888887
+Overall error: 6.8658007104206416
+Overall accuracy std: 0.0026722856630344727
+Overall error std: 3.037781262761296
+Took 104.29765343666077 to complete evaluation with accuracy 2
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 4
+
+Took 103.65798354148865 to map recovered traces to simulated ones
+Overall accuracy: 0.2824435763888889
+Overall error: 6.388601713062209
+Overall accuracy std: 0.002872646072289467
+Overall error std: 2.832045970103639
+Took 103.72580146789551 to complete evaluation with accuracy 4
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 8
+
+Took 106.62231230735779 to map recovered traces to simulated ones
+Overall accuracy: 0.49672670717592593
+Overall error: 5.772977684477122
+Overall accuracy std: 0.0032597764853881978
+Overall error std: 2.513723887339512
+Took 106.68988370895386 to complete evaluation with accuracy 8
+
+
+Took 590.2605776786804 to complete all evaluations with sampling 4
+
+
+Evaluating simulation with parameters:
+> Sampling: 8
+Aggregated data with shape (96, 1024) turned into (12, 1024)
+Traces with shape (576, 96) turned into (576, 12)
+Took 0.003968000411987305 to create build distribution matrix
+Took 90.35097146034241 to create recover traces from aggregated data
+Mapping recovered traces with parameters:
+> Accuracy: 1
+
+Took 56.2390923500061 to map recovered traces to simulated ones
+Overall accuracy: 0.13863570601851852
+Overall error: 2.8996537116806587
+Overall accuracy std: 0.00173271695124472
+Overall error std: 1.7392374729636413
+Took 56.28415274620056 to complete evaluation with accuracy 1
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 2
+
+Took 56.30661678314209 to map recovered traces to simulated ones
+Overall accuracy: 0.20798972800925924
+Overall error: 2.499633761576437
+Overall accuracy std: 0.0014430245124999702
+Overall error std: 1.5232391785319723
+Took 56.34423613548279 to complete evaluation with accuracy 2
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 4
+
+Took 55.17031788825989 to map recovered traces to simulated ones
+Overall accuracy: 0.36391420717592593
+Overall error: 2.1269669625489485
+Overall accuracy std: 0.0022552019803175095
+Overall error std: 1.1945115488189633
+Took 55.2075560092926 to complete evaluation with accuracy 4
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 8
+
+Took 55.59333109855652 to map recovered traces to simulated ones
+Overall accuracy: 0.6299913194444444
+Overall error: 1.9589276316685142
+Overall accuracy std: 0.0031877986887342063
+Overall error std: 0.9879752613724515
+Took 55.63092613220215 to complete evaluation with accuracy 8
+
+
+Took 313.8350691795349 to complete all evaluations with sampling 8
+
+
+Evaluating simulation with parameters:
+> Sampling: 16
+Aggregated data with shape (96, 1024) turned into (6, 1024)
+Traces with shape (576, 96) turned into (576, 6)
+Took 0.0021004676818847656 to create build distribution matrix
+Took 46.34314846992493 to create recover traces from aggregated data
+Mapping recovered traces with parameters:
+> Accuracy: 1
+
+Took 31.367424964904785 to map recovered traces to simulated ones
+Overall accuracy: 0.16923466435185186
+Overall error: 1.5264596327811302
+Overall accuracy std: 0.0011968599614998773
+Overall error std: 0.8423046919614647
+Took 31.382845401763916 to complete evaluation with accuracy 1
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 2
+
+Took 30.949899196624756 to map recovered traces to simulated ones
+Overall accuracy: 0.2127097800925926
+Overall error: 1.3915880483547856
+Overall accuracy std: 0.002058456781703157
+Overall error std: 0.7269841100136182
+Took 30.961855173110962 to complete evaluation with accuracy 2
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 4
+
+Took 31.063677072525024 to map recovered traces to simulated ones
+Overall accuracy: 0.36277488425925924
+Overall error: 1.152753860852938
+Overall accuracy std: 0.0033330457272882546
+Overall error std: 0.5637980240047183
+Took 31.07680916786194 to complete evaluation with accuracy 4
+
+
+Mapping recovered traces with parameters:
+> Accuracy: 8
+
+Took 31.005120515823364 to map recovered traces to simulated ones
+Overall accuracy: 0.6168619791666667
+Overall error: 1.1118092588194872
+Overall accuracy std: 0.002048263185006899
+Overall error std: 0.47738361054171824
+Took 31.016775131225586 to complete evaluation with accuracy 8
+
+
+Took 170.79662227630615 to complete all evaluations with sampling 16
+
 

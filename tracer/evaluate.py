@@ -26,7 +26,7 @@ def evaluate_simulation(
         sampled_traces,
         accuracy=accuracy,
         mapping_style='accuracy',
-        n_jobs=-1,
+        n_jobs=8,
     )
     print(f'Took {time() - t_start} to map recovered traces to simulated ones')
 
