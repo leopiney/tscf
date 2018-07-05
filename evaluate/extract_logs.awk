@@ -9,7 +9,9 @@ BEGIN { print "towers,sampling,district_size,accuracy,accuracy_std,error,error_s
 /Overall error:/ { error = $3 }
 /Overall error std:/ { error_std = $4 }
 
+/recover traces from aggregated data/ { recover_time = $2 }
 /complete evaluation with accuracy/ {
-	execution_time = $2;
+	mapping_time = $2
+	execution_time = mapping_time + recover_time;
 	print towers "," sampling "," district_size "," accuracy "," accuracy_std "," error "," error_std "," execution_time;
 }
