@@ -97,7 +97,7 @@ def evaluate_simulations():
             number_users=number_users,
             number_towers=number_towers,
             number_cycles=96,
-            velocity=(0.01, 0.01),
+            velocity=(0.05, 0.05),
             wait_time_max=None,
             mobility_model='random_direction',
             verbose=True,
