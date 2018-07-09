@@ -1,4 +1,5 @@
 """Batch evaluation of simulators, instead of running notebooks"""
+import itertools
 import pickle
 from time import time
 
@@ -26,19 +27,30 @@ def evaluate_simulation(
         sampled_traces,
         accuracy=accuracy,
         mapping_style='accuracy',
-        n_jobs=8,
+        k=2,
+        n_jobs=-1,
     )
     print(f'Took {time() - t_start} to map recovered traces to simulated ones')
 
-    overall_accuracy = np.mean([a[1] for a in k_analysis])
-    overall_error = np.mean([a[3] for a in k_analysis])
-    overall_accuracy_std = np.std([a[1] for a in k_analysis])
-    overall_error_std = np.std([a[3] for a in k_analysis])
+    overall_accuracy = np.mean([a['new'][1] for a in k_analysis])
+    overall_error = np.mean([a['new'][3] for a in k_analysis])
+    overall_accuracy_std = np.std([a['new'][1] for a in k_analysis])
+    overall_error_std = np.std([a['new'][3] for a in k_analysis])
 
-    print(f'Overall accuracy: {overall_accuracy}')
-    print(f'Overall error: {overall_error}')
-    print(f'Overall accuracy std: {overall_accuracy_std}')
-    print(f'Overall error std: {overall_error_std}')
+    print(f'NEW Overall accuracy: {overall_accuracy}')
+    print(f'NEW Overall error: {overall_error}')
+    print(f'NEW Overall accuracy std: {overall_accuracy_std}')
+    print(f'NEW Overall error std: {overall_error_std}')
+
+    overall_accuracy = np.mean([a['old'][1] for a in k_analysis])
+    overall_error = np.mean([a['old'][3] for a in k_analysis])
+    overall_accuracy_std = np.std([a['old'][1] for a in k_analysis])
+    overall_error_std = np.std([a['old'][3] for a in k_analysis])
+
+    print(f'OLD Overall accuracy: {overall_accuracy}')
+    print(f'OLD Overall error: {overall_error}')
+    print(f'OLD Overall accuracy std: {overall_accuracy_std}')
+    print(f'OLD Overall error std: {overall_error_std}')
 
     #
     # Also append the simulator attributes to store this information for further analysis.
@@ -79,25 +91,34 @@ def evaluate_simulation(
 
 def evaluate_simulations():
     """Evaluates simulations on a grid of parameters for the simulators"""
-    number_users = 576
 
-    params_number_towers = [16**2, 24**2, 32**2]
-    params_samplings = [1, 2, 3, 4, 8, 16]
-    params_accuracy = [1, 2, 4, 8]  # Size of the districts
+    # params_number_towers = [16**2, 24**2, 32**2]
+    # params_samplings = [1, 2, 3, 4, 8, 16]
+    # params_accuracy = [1, 2, 4, 8]  # Size of the districts
+    params_number_users = [4**2, 8**2, 12**2, 16**2, 20**2, 24**2]
+    params_number_towers = [4**2, 8**2, 12**2, 16**2, 20**2, 24**2, 28**2, 32**2]
+    params_samplings = [1]
+    params_accuracy = [1]  # Size of the districts
+    params_velocity = [(0.01, 0.01), (0.05, 0.05)]
 
     test_id = 0
-    for number_towers in params_number_towers:
+    for number_users, number_towers, velocity in itertools.product(
+        params_number_users,
+        params_number_towers,
+        params_velocity,
+    ):
         test_id += 1
         print(f'#{test_id} - Creating simulation with parameters:')
         print(f'> Users: {number_users}')
         print(f'> Towers: {number_towers}')
+        print(f'> Velocity: {velocity}')
         print(f'> Iteration steps: {96}\n')
 
         simulator = MobilitySimulator(
             number_users=number_users,
             number_towers=number_towers,
             number_cycles=96,
-            velocity=(0.05, 0.05),
+            velocity=velocity,
             wait_time_max=None,
             mobility_model='random_direction',
             verbose=True,

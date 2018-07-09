@@ -133,15 +133,18 @@ class TrajectoryRecovery(object):
             self.are_same_coord(y1, y2, old_grid, accuracy)
         )
 
-    def get_traces_common_elements(self, trace_1, trace_2, number_towers,
-                                   accuracy=64):
-        number_towers = math.sqrt(number_towers)
-        if accuracy > number_towers:
-            accuracy = number_towers
-        common_elements = [self.are_on_same_district(
-            trace_1[i], trace_2[i], number_towers, accuracy) for i in range(
-                len(trace_1))]
+    def get_traces_common_elements(self, trace_1, trace_2, number_towers, accuracy=64):
+        towers_in_one_side = math.sqrt(number_towers)
+        if accuracy > towers_in_one_side:
+            accuracy = towers_in_one_side
+        common_elements = [
+            self.are_on_same_district(trace_1[i], trace_2[i], towers_in_one_side, accuracy)
+            for i in range(len(trace_1))
+        ]
         return np.sum(common_elements)
+
+    def get_traces_common_elements_old(self, trace_1, trace_2):
+        return np.sum(trace_1 == trace_2)
 
     def get_traces_distance_error(self, trace_1, trace_2):
         return np.sum([
@@ -161,6 +164,7 @@ class TrajectoryRecovery(object):
         # has already been used
         #
         used_traces = np.array([False for _ in real_traces])
+        used_traces_old = np.array([False for _ in real_traces])
 
         #
         # Store the accuracy, error and best match for each mapping between the recovered
@@ -168,8 +172,10 @@ class TrajectoryRecovery(object):
         # and the real_traces
         #
         mapping_accuracy = np.zeros(len(self.S.T)).astype('int')
+        mapping_accuracy_old = np.zeros(len(self.S.T)).astype('int')
         mapping_error = np.zeros(len(self.S.T))
         result = np.zeros(len(self.S.T)).astype('int')
+        result_old = np.zeros(len(self.S.T)).astype('int')
 
         #
         # Generate a random index to iterate through the recoevered traces in a random order
@@ -189,10 +195,19 @@ class TrajectoryRecovery(object):
             # many towers they have in common with the recovered_trace
             #
             common_elements = np.array([
-                self.get_traces_common_elements(recovered_trace, real_trace,
-                                                self.number_towers, accuracy)
+                self.get_traces_common_elements(
+                    recovered_trace,
+                    real_trace,
+                    self.number_towers,
+                    accuracy
+                )
                 for real_trace in real_traces
             ])
+            common_elements_old = np.array([
+                self.get_traces_common_elements_old(recovered_trace, real_trace)
+                for real_trace in real_traces
+            ])
+
             mapping_errors = np.array([
                 self.get_traces_distance_error(
                     trace_1=recovered_trace,
@@ -206,10 +221,12 @@ class TrajectoryRecovery(object):
             # So that they won't be selected as candidates
             #
             common_elements[used_traces] = -1
+            common_elements_old[used_traces_old] = -1
 
             # Select the real_trace that matches the best with the recovered
             if mapping_style == 'accuracy':
                 best_match_index = np.argmax(common_elements)
+                best_match_index_old = np.argmax(common_elements_old)
             elif mapping_style == 'error':
                 best_match_index = np.argmin(mapping_errors)
             else:
@@ -219,21 +236,28 @@ class TrajectoryRecovery(object):
                 )
 
             mapping_accuracy[recovered_trace_index] = common_elements[best_match_index]
+            mapping_accuracy_old[recovered_trace_index] = common_elements_old[best_match_index]
             mapping_error[recovered_trace_index] = mapping_errors[best_match_index]
 
             result[recovered_trace_index] = best_match_index
+            result_old[recovered_trace_index] = best_match_index_old
 
             # Mark best match trace as used
             used_traces[best_match_index] = True
+            used_traces_old[best_match_index_old] = True
 
         mapping_accuracy = np.array(mapping_accuracy)
+        mapping_accuracy_old = np.array(mapping_accuracy_old)
 
-        global_accuracy = np.sum(
-            mapping_accuracy / self.number_cycles) / self.number_users
-        return result, global_accuracy, mapping_accuracy, mapping_error
+        global_accuracy = np.sum(mapping_accuracy / self.number_cycles) / self.number_users
+        global_accuracy_old = np.sum(mapping_accuracy_old / self.number_cycles) / self.number_users
 
-    def map_traces_analysis(self, real_traces, mapping_style, accuracy,
-                            k=8, n_jobs=-1):
+        return {
+            'new': [result, global_accuracy, mapping_accuracy, mapping_error],
+            'old': [result_old, global_accuracy_old, mapping_accuracy_old, mapping_error],
+        }
+
+    def map_traces_analysis(self, real_traces, mapping_style, accuracy, k=8, n_jobs=-1):
         """Returns the mapping results starting at a random generated trace
 
         To avoid falling into local minimum values its appropiate to run
