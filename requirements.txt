@@ -1,19 +1,22 @@
-numpy
-pandas
-matplotlib
-pygal
-seaborn
-scipy
+numpy==1.14.2
+pandas==0.22.0
+matplotlib==2.2.2
+pygal==2.4.0
+seaborn==0.8.1
+scipy==1.0.1
 
-joblib
-tqdm
+joblib==0.11
+tqdm==4.23.3
 
-gmaps
+gmaps==0.8.0
 
+fire==0.1.3
+
+#
+# Dev utils
+#
 jupyter
 jupyterlab
-
 ipython
 ipdb
 flake8
-fire

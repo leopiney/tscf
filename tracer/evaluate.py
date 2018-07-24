@@ -84,22 +84,27 @@ def evaluate_simulation(
     pickle.dump(
         dump,
         open('_'.join([
-            './evaluate/.tmp_eval_s_{sampling}_acc_{accuracy}.pkl',
+            './evaluations/.tmp_eval_s_{sampling}_acc_{accuracy}.pkl',
         ]), 'wb')
     )
 
 
 def evaluate_simulations():
     """Evaluates simulations on a grid of parameters for the simulators"""
+    # ##########################################################################
+    # #################### Edit the following parameters #######################
+    # ##########################################################################
 
-    # params_number_towers = [16**2, 24**2, 32**2]
-    # params_samplings = [1, 2, 3, 4, 8, 16]
-    # params_accuracy = [1, 2, 4, 8]  # Size of the districts
     params_number_users = [4**2, 8**2, 12**2, 16**2, 20**2, 24**2]
-    params_number_towers = [4**2, 8**2, 12**2, 16**2, 20**2, 24**2, 28**2, 32**2]
-    params_samplings = [1]
-    params_accuracy = [1]  # Size of the districts
-    params_velocity = [(0.01, 0.01), (0.05, 0.05)]
+    params_number_towers = [4**2, 8**2, 12 **
+                            2, 16**2, 20**2, 24**2, 28**2, 32**2]
+    params_samplings = [1, 2, 3, 4, 8, 16]  # Sampling
+    params_accuracy = [1, 2, 4, 8]  # Size of the districts
+    params_velocity = [(0.01, 0.01), (0.05, 0.05)]  # Global velocity
+
+    # ##########################################################################
+    # ##########################################################################
+    # ##########################################################################
 
     test_id = 0
     for number_users, number_towers, velocity in itertools.product(
@@ -155,11 +160,13 @@ def evaluate_simulations():
 
             t_start = time()
             trajectory_recovery.build_distribution_matrix()
-            print(f'Took {time() - t_start} to create build distribution matrix')
+            print(
+                f'Took {time() - t_start} to create build distribution matrix')
 
             t_start = time()
             trajectory_recovery.trajectory_recovery_generator()
-            print(f'Took {time() - t_start} to create recover traces from aggregated data')
+            print(
+                f'Took {time() - t_start} to create recover traces from aggregated data')
 
             for accuracy in params_accuracy:
                 print(f'Mapping recovered traces with parameters:')
@@ -179,7 +186,8 @@ def evaluate_simulations():
                     f'with accuracy {accuracy}\n\n'
                 )
 
-            print(f'Took {time() - t_0} to complete all evaluations with sampling {sampling}\n\n')
+            print(
+                f'Took {time() - t_0} to complete all evaluations with sampling {sampling}\n\n')
 
 
 class Evaluator(object):
